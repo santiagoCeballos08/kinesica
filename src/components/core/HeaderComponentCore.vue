@@ -36,6 +36,8 @@
 	</header>
 </template>
 
-<script setup></script>
+<script setup>
+import { Bars3CenterLeftIcon } from '@heroicons/vue/20/solid';
+</script>
 
 <style lang="scss" scoped></style>

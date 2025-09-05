@@ -1,6 +1,6 @@
 <template>
 	<header-component-core />
-	<!-- informacion -->
+	<router-view class="min-h-[80vh]" />
 	<footer-component-core />
 </template>
 

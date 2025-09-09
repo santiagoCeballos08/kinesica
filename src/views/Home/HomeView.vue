@@ -1,5 +1,7 @@
-<script setup></script>
+<script setup>
+import BannerComponent from '@/components/components/home/BannerComponent.vue';
+</script>
 
 <template>
-	<main>home view</main>
+	<banner-component />
 </template>

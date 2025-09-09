@@ -8,7 +8,17 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 
+// importamos directivas personalizadas
+import fadeScroll from './assets/directives/fadeScroll';
+import showAnimate from './assets/directives/showAnimate';
+import fadeInDirectives from './assets/directives/fadeInDirectives';
+
 const app = createApp(App);
+
+// implementamos las directivas
+app.directive('fade-scroll', fadeScroll);
+app.directive('fade-in', fadeInDirectives);
+app.directive('fade-animation-show', showAnimate);
 
 app.use(createPinia());
 app.use(router);

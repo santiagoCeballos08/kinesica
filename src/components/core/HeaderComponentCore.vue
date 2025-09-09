@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="container__header__hero flex flex-col items-center p-4 lg:p-10 lg:px-20 lg:py-8 bg-black-app text-white-app sticky top-0 left-0 w-full lg:sticky lg:h-fit lg:flex-row lg:justify-between transition-all"
+		class="container__header__hero flex flex-col items-center p-4 lg:p-10 lg:px-20 lg:py-8 bg-black-app text-white-app sticky z-50 top-0 left-0 w-full lg:sticky lg:h-fit lg:flex-row lg:justify-between transition-all"
 		:class="active ? 'h-screen' : 'h-fit'"
 	>
 		<div class="content__icon__button flex w-full lg:w-fit justify-between items-center px-4">

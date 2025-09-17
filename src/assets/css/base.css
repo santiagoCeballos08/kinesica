@@ -5,6 +5,7 @@
 	--color-secundary: oklch(32.59% 0.052 250.65);
 	--color-black-app: oklch(14.48% 0 0);
 	--color-white-app: oklch(98.46% 0.002 247.84);
+	--border-radius: 0.8rem;
 }
 
 @theme {
@@ -13,6 +14,8 @@
 	--color-black-app: oklch(14.48% 0 0);
 	--color-white-app: oklch(98.46% 0.002 247.84);
 	--font-kanit: 'Kanit', sans-serif;
+	--text-Title: 4rem;
+	--spacing-app: 120rem;
 }
 
 @layer components {

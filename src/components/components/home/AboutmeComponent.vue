@@ -30,24 +30,24 @@
 				<div class="about__icons mt-20 md:mt-50">
 					<div class="icon" v-for="(card, index) in dataKinesica" :id="index">
 						<div
-							class="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+							class="bg-gradient-to-br from-blue-400 to-main rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
 						>
 							<div class="flex items-center justify-between mb-4">
 								<div
 									class="p-3 bg-white/20 rounded-xl group-hover:bg-white/30 transition-colors"
 								>
-									<component :is="card.icon" class="size-10" />
+									<component :is="card.icon" class="size-15" />
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<p class="text-2xl font-bold mb-1">{{ card.value }}</p>
-								<p class="text-red-100 text-sm">{{ card.subtitle }}</p>
+								<p class="text-3xl font-bold mb-1">{{ card.value }}</p>
+								<p class="text-red-100">{{ card.subtitle }}</p>
 							</div>
 
 							<div>
-								<h4 class="font-semibold text-sm mb-1">{{ card.title }}</h4>
-								<p class="text-red-200 text-xs">{{ card.description }}</p>
+								<h4 class="font-semibold mb-1">{{ card.title }}</h4>
+								<p class="text-blue-200">{{ card.description }}</p>
 							</div>
 
 							<div class="mt-4 h-1 bg-white/20 rounded-full overflow-hidden">
@@ -70,19 +70,11 @@ import { UsersIcon, HeartIcon } from '@heroicons/vue/24/outline';
 const dataKinesica = ref([
 	{
 		title: 'Pacientes Activos',
-		value: '247',
-		subtitle: 'Este mes',
+		value: '140 ',
+		subtitle: 'Pacientes',
 		icon: UsersIcon,
 		trend: '+12%',
 		description: 'Pacientes en tratamiento',
-	},
-	{
-		title: 'Sesiones Completadas',
-		value: '1,834',
-		subtitle: 'Total mensual',
-
-		trend: '+8%',
-		description: 'Terapias realizadas',
 	},
 	{
 		title: 'Tasa de Recuperación',
@@ -99,12 +91,18 @@ const dataKinesica = ref([
 .about__icons {
 	display: flex;
 	justify-content: space-around;
+	flex-direction: column;
+	gap: 5rem;
+}
+
+@media (width >= 768px) {
+	.about__icons {
+		flex-direction: row;
+		gap: 2rem;
+	}
 }
 
 .about__icons .icon {
-	background-color: red;
-	height: 10rem;
-	width: 10rem;
 	border-radius: var(--border-radius);
 }
 </style>

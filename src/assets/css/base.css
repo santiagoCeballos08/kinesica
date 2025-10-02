@@ -14,7 +14,7 @@
 	--color-black-app: oklch(14.48% 0 0);
 	--color-white-app: oklch(98.46% 0.002 247.84);
 	--font-kanit: 'Kanit', sans-serif;
-	--text-Title: 4rem;
+	--text-title: 4rem;
 	--spacing-app: 120rem;
 }
 
@@ -25,6 +25,10 @@
 
 	.boton-contacto {
 		@apply px-10 py-6 bg-main shadow-md text-center lg:text-3xl flex justify-center items-center gap-4;
+	}
+
+	.title-section {
+		@apply text-lg border px-2 py-1 rounded-full w-fit mx-auto block;
 	}
 }
 
@@ -45,7 +49,7 @@ body {
 	font-size: 16px;
 	font-family: 'Kanit';
 	line-height: 1.6;
-	background-color: var(--color-white-app);
+	/* background-color: var(--color-white-app); */
 }
 
 html::-webkit-scrollbar {

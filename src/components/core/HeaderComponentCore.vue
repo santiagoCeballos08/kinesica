@@ -1,28 +1,20 @@
 <template>
 	<header
-		class="container__header__hero flex flex-col items-center p-4 lg:p-10 lg:px-20 lg:py-8 bg-black-app text-white-app sticky z-50 top-0 left-0 w-full lg:sticky lg:h-fit lg:flex-row lg:justify-between transition-all"
-		:class="active ? 'h-screen' : 'h-fit'"
-	>
+		class="container__header__hero flex flex-col items-center p-4 lg:p-10 lg:px-20 lg:py-8 bg-white-app text-black-app sticky z-50 top-0 left-0 w-full  lg:h-fit lg:flex-row lg:justify-between transition-all shadow-md"
+		:class="active ? 'h-screen' : 'h-fit'">
 		<div class="content__icon__button flex w-full lg:w-fit justify-between items-center px-4">
-			<figure class="header__icon lg:h-[6rem] lg:w-[6rem]">
-				<img
-					src="https://placehold.co/60x60/EEE/31343C?font=montserrat"
-					alt="logo kinesica"
-				/>
+			<figure class="header__icon w-[6rem] lg:h-[5rem] lg:w-[8rem]">
+				<img src="/assets/logo.webp" alt="logo kinesica" />
 			</figure>
 			<bars3-center-left-icon class="size-12 cursor-pointer lg:hidden" @click="toggleMenu" />
 		</div>
-		<nav
-			class="header__container__items text-center lg:block"
-			:class="active ? 'block' : 'hidden'"
-		>
+		<nav class="header__container__items text-center lg:block" :class="active ? 'block' : 'hidden'">
 			<ul class="header__navegation__items lg:flex">
 				<li class="header__itmes">
 					<router-link :to="{ path: '/', hash: '#inicio' }">inicio</router-link>
 				</li>
 				<li class="header__itmes">
-					<router-link :to="{ path: '/', hash: '#quienesSomos' }"
-						>Quienes somos
+					<router-link :to="{ path: '/', hash: '#quienesSomos' }">Quienes somos
 					</router-link>
 				</li>
 				<li class="header__itmes">
@@ -31,8 +23,7 @@
 					</router-link>
 				</li>
 				<li class="header__itmes">
-					<router-link :to="{ path: '/', hash: '#profesionales' }"
-						>Profesionales
+					<router-link :to="{ path: '/', hash: '#profesionales' }">Profesionales
 					</router-link>
 				</li>
 				<li class="header__itmes">

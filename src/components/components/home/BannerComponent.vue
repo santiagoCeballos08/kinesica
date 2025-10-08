@@ -3,16 +3,11 @@
 		<section class="container__banner relative">
 			<picture class="w-full container__video__banner">
 				<source srcset="https://placehold.co/400x800" media="(max-width: 1200px)" />
-				<img
-					src="https://placehold.co/1400x600"
-					alt="video kinesica R"
-					class="w-full object-cover"
-				/>
+				<img src="https://placehold.co/1400x600" alt="video kinesica R" class="w-full object-cover" />
 			</picture>
 
 			<div
-				class="container__banner__info absolute inset-0 flex flex-col items-center justify-center bg-black-app/50 text-center"
-			>
+				class="container__banner__info absolute inset-0 flex flex-col items-center justify-center bg-black-app/50 text-center">
 				<span class="opacity-75">Kinesica Fisioterapia</span>
 				<h1 class="uppercase text-6xl lg:text-[5vw] font-bold mb-10">
 					SIN EXCUSAS. SOLO RESULTADOS
@@ -21,17 +16,12 @@
 					Recuperación atlética de élite. Maximiza tu rendimiento deportivo con técnicas
 					especializadas en fisioterapia deportiva.
 				</h2>
-				<section
-					class="container__button__banner flex gap-8 lg:gap-10 flex-wrap mb-20 md:mb-40 justify-center"
-				>
-					<a href="" class="boton-contacto"
-						>Agenda con nosotros <calendar-days-icon class="size-20 inline" />
+				<section class="container__button__banner flex gap-8 lg:gap-10 flex-wrap mb-20 md:mb-40 justify-center">
+					<a href="" class="boton-contacto">Agenda con nosotros <calendar-days-icon class="size-20 inline" />
 					</a>
 					<a href="" class="boton-contacto group hover:scale-100">
 						Saber Más
-						<ArrowLongRightIcon
-							class="size-10 rotate-[-45deg] group-hover:scale-150 transition-all"
-						/>
+						<ArrowLongRightIcon class="size-10 rotate-[-45deg] group-hover:scale-150 transition-all" />
 					</a>
 				</section>
 				<arrow-down-icon class="" />

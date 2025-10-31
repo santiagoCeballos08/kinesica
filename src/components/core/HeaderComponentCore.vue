@@ -10,26 +10,26 @@
 		</div>
 		<nav class="header__container__items text-center lg:block" :class="active ? 'block' : 'hidden'">
 			<ul class="header__navegation__items lg:flex">
-				<li class="header__itmes">
+				<li class="header__itmes text-main-700">
 					<router-link :to="{ path: '/', hash: '#inicio' }">inicio</router-link>
 				</li>
-				<li class="header__itmes">
+				<li class="header__itmes text-main-700 ">
 					<router-link :to="{ path: '/', hash: '#quienesSomos' }">Quienes somos
 					</router-link>
 				</li>
-				<li class="header__itmes">
+				<li class="header__itmes text-main-700">
 					<router-link :to="{ path: '/', hash: '#nuestrosServicios' }">
 						Nuestros servicios
 					</router-link>
 				</li>
-				<li class="header__itmes">
+				<li class="header__itmes text-main-700">
 					<router-link :to="{ path: '/', hash: '#profesionales' }">Profesionales
 					</router-link>
 				</li>
-				<li class="header__itmes">
-					<router-link :to="{ path: '/', hash: '#planes' }">Planes</router-link>
+				<li class="header__itmes text-main-700">
+					<router-link :to="{ path: '/', hash: '#precios' }">Planes</router-link>
 				</li>
-				<li class="header__itmes">
+				<li class="header__itmes text-main-700">
 					<router-link :to="{ path: '/', hash: '#contacto' }">Contactanos</router-link>
 				</li>
 			</ul>

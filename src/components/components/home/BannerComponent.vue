@@ -1,5 +1,5 @@
 <template>
-	<article class="container__banner__hero w-full mb-40">
+	<article class="container__banner__hero w-full mb-40" id="inicio">
 		<section class="container__banner relative">
 			<picture class="w-full container__video__banner">
 				<source srcset="https://placehold.co/400x800" media="(max-width: 1200px)" />

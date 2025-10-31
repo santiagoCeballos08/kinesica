@@ -1,15 +1,14 @@
 <template>
-	<!-- TODO: seccion de quienes somos -->
-	<!-- TODO: imagen del negocio o de la seccion-->
-	<!-- TODO: informacion de quienes somos y botones de informacion -->
-	<section class="container__aboutme__hero max-w-app mx-auto ">
+
+	<section class="container__aboutme__hero max-w-app mx-auto " id="quienesSomos">
+		<span class="title-section mb-10">Quienes somos</span>
 		<article class="container__info__about grid grid-cols-1 md:grid-cols-2 gap-20">
 			<div class="info__about__image">
 				<img src="https://placehold.co/600x1000?text=Kinesica&font=roboto"
 					alt="imagen de quienes somos kinesica" />
 			</div>
 			<article class="container__info p-10">
-				<h2 class="title__about text-title font-bold mb-10">Quienes somos en Kinesica</h2>
+				<h2 class="title__about text-title font-bold mb-10 text-main-700">Quienes somos en Kinesica</h2>
 				<p v-fade-scroll class="info__about text-justify">
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, quia
 					incidunt nam nisi, consectetur facilis atque at perspiciatis, repudiandae quas
@@ -17,7 +16,7 @@
 					sapiente placeat!
 				</p>
 
-				<h3 class="title__about text-title font-bold mb-10">Nuestra experiencia</h3>
+				<h3 class="title__about text-title font-bold mb-10 text-main-700">Nuestra experiencia</h3>
 				<p v-fade-scroll class="info__about text-justify">
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, quia
 					incidunt nam nisi, consectetur facilis atque at perspiciatis, repudiandae quas

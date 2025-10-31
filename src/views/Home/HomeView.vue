@@ -2,6 +2,7 @@
 import BannerComponent from '@/components/components/home/BannerComponent.vue';
 import AboutmeComponent from '@/components/components/home/AboutmeComponent.vue';
 import PricingsComponent from '@/components/components/home/PricingsComponent.vue';
+import ProsesionalsComponent from '@/components/components/home/ProsesionalsComponent.vue';
 </script>
 
 <template>
@@ -9,6 +10,9 @@ import PricingsComponent from '@/components/components/home/PricingsComponent.vu
 	<banner-component />
 	<!-- componente aboutme -->
 	<aboutme-component />
+
+	<!-- profesionales -->
+	<prosesionals-component />
 
 	<!-- componente de precios -->
 	<pricings-component />

@@ -1,6 +1,6 @@
 <template>
 
-	<section class="container__aboutme__hero max-w-app mx-auto " id="quienesSomos">
+	<section class="container__aboutme__hero max-w-app mx-auto mb-40" id="quienesSomos">
 		<span class="title-section mb-10">Quienes somos</span>
 		<article class="container__info__about grid grid-cols-1 md:grid-cols-2 gap-20">
 			<div class="info__about__image">

@@ -1,10 +1,9 @@
 <template>
 	<footer
-		class="content__footer__hero bg-white text-black min-h-[30rem] grid lg:grid-cols-4 text-center lg:text-start p-8"
-	>
+		class="content__footer__hero bg-main text-white-app min-h-[30rem] grid lg:grid-cols-4 text-center lg:text-start p-20">
 		<section class="col-span-2">
-			<figure class="w-fit mx-auto mb-4">
-				<img src="https://placehold.co/60x60/EEE/31343C?font=montserrat" alt="" />
+			<figure class="w-fit mx-auto mb-4 max-w-50">
+				<img src="/assets/logo.webp" alt="" />
 			</figure>
 			<p class="line-clamp-3 w-1/2 mx-auto mb-4 text-center">
 				Tu centro de fisioterapia de confianza para una recuperacion integral y bienestar
@@ -12,9 +11,7 @@
 			</p>
 		</section>
 
-		<article
-			class="content__footer__links col-span-2 flex flex-col lg:flex-row gap-8 justify-around"
-		>
+		<article class="content__footer__links col-span-2 flex flex-col lg:flex-row gap-8 justify-around">
 			<section class="footer__links__servicios">
 				<h3 class="font-semibold">Servicios</h3>
 				<ul class="content">
@@ -28,39 +25,24 @@
 				<h3 class="font-semibold">Enlaces</h3>
 				<ul class="content">
 					<li>
-						<router-link
-							class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }"
-							>Inicio</router-link
-						>
+						<router-link class="hover:underline underline-offset-4"
+							:to="{ path: '/', hash: '' }">Inicio</router-link>
 					</li>
 					<li>
-						<router-link
-							class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }"
-							>Servicios</router-link
-						>
+						<router-link class="hover:underline underline-offset-4"
+							:to="{ path: '/', hash: '' }">Servicios</router-link>
 					</li>
 					<li>
-						<router-link
-							class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }"
-							>Profesionales</router-link
-						>
+						<router-link class="hover:underline underline-offset-4"
+							:to="{ path: '/', hash: '' }">Profesionales</router-link>
 					</li>
 					<li>
-						<router-link
-							class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }"
-							>Planes</router-link
-						>
+						<router-link class="hover:underline underline-offset-4"
+							:to="{ path: '/', hash: '' }">Planes</router-link>
 					</li>
 					<li>
-						<router-link
-							class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }"
-							>Contacto</router-link
-						>
+						<router-link class="hover:underline underline-offset-4"
+							:to="{ path: '/', hash: '' }">Contacto</router-link>
 					</li>
 				</ul>
 			</section>
@@ -78,9 +60,7 @@
 		<p>Kinsesica© Todos los derechos reservados {{ year }}</p>
 		<p>
 			Desarrollado por
-			<a href="https://github.com/santiagoCeballos08" name="nombreDesarrollador"
-				>Santiago ceballos</a
-			>
+			<a href="https://github.com/santiagoCeballos08" name="nombreDesarrollador">Santiago ceballos</a>
 		</p>
 	</section>
 </template>

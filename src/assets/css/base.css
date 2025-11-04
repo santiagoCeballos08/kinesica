@@ -41,6 +41,7 @@
 	--color-white-app: oklch(98.46% 0.002 247.84);
 	--font-kanit: 'Kanit', sans-serif;
 	--text-title: 4rem;
+	--text-subtitle: 3rem;
 	--spacing-app: 120rem;
 }
 
@@ -59,6 +60,21 @@
 
 	.services__button{
 		@apply cursor-pointer underline underline-offset-4 text-3xl
+	}
+
+	/* estilos de la card de los profesionales */
+	.card__info{
+		@apply p-8
+	}
+
+	.card__info__title {
+		@apply  opacity-65
+	}
+	.card__info__name {
+		@apply text-subtitle font-semibold mb-10
+	}
+	.card__info__redes {
+		@apply flex gap-4
 	}
 }
 

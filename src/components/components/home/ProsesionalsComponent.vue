@@ -23,13 +23,13 @@ import LinkedingIcon from '@/assets/icons/LinkedingIcon.vue';
 					<h3 class="card__info__name">Camila Gavria</h3>
 					<ul class="card__info__redes">
 						<li>
-							<a href=""><facebook-icon class="size-15" /></a>
+							<a href=""><facebook-icon color="oklch(0.3142 0.0765 188.33)" class="size-15" /></a>
 						</li>
 						<li>
-							<a href=""><instagram-icon class="size-15" /> </a>
+							<a href=""><instagram-icon color="oklch(0.3142 0.0765 188.33)" class="size-15" /> </a>
 						</li>
 						<li>
-							<a href=""><linkeding-icon class="size-15" /> </a>
+							<a href=""><linkeding-icon color="oklch(0.3142 0.0765 188.33)" class="size-15" /> </a>
 						</li>
 					</ul>
 				</article>
@@ -44,13 +44,13 @@ import LinkedingIcon from '@/assets/icons/LinkedingIcon.vue';
 					<h3 class="card__info__name">Camila Gavria</h3>
 					<ul class="card__info__redes">
 						<li>
-							<a href=""><facebook-icon class="size-15" /></a>
+							<a href=""><facebook-icon color="oklch(0.3142 0.0765 188.33)" class="size-15" /></a>
 						</li>
 						<li>
-							<a href=""><instagram-icon class="size-15" /> </a>
+							<a href=""><instagram-icon color="oklch(0.3142 0.0765 188.33)" class="size-15" /> </a>
 						</li>
 						<li>
-							<a href=""><linkeding-icon class="size-15" /> </a>
+							<a href=""><linkeding-icon color="oklch(0.3142 0.0765 188.33)" class="size-15" /> </a>
 						</li>
 					</ul>
 				</article>

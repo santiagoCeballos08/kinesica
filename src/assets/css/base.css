@@ -76,6 +76,9 @@
 	.card__info__redes {
 		@apply flex gap-4
 	}
+	.card__profesional {
+		@apply mx-auto
+	}
 }
 
 /* ------------------------------------------------------------------------- configuracion base del aplicativo ------------------------------------------------------------------------- */

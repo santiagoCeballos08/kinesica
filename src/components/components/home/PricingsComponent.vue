@@ -2,7 +2,7 @@
 	<section class=" container__princings__hero mt-40 bg-white-app p-4" id="precios">
 		<span class="title-section mb-10">nuestros precios</span>
 		<h2 class="text-title font-bold border-dotted border-main-300 border-b-2 text-center text-main-700">Nuestros
-			increibles preicios
+			increibles precios
 		</h2>
 		<section class="container__princings__titles ">
 			<section class="princings__services mt-10 mb-40 p-5 flex flex-wrap w-full justify-center gap-10">

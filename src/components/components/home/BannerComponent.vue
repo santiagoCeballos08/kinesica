@@ -1,18 +1,20 @@
 <template>
 	<article class="container__banner__hero w-full mb-40" id="inicio">
 		<section class="container__banner relative">
-			<picture class="w-full container__video__banner">
-				<source srcset="https://placehold.co/400x800" media="(max-width: 1200px)" />
-				<img src="https://placehold.co/1400x600" alt="video kinesica R" class="w-full object-cover" />
-			</picture>
+			<video class="w-full h-full object-cover" autoplay loop muted playsinline>
+				<source src="/assets/banner.webm" type="video/mp4">
+				<!-- Provide a fallback image if video doesn't load -->
+				<img src="https://placehold.co/1400x600" alt="video kinesica R" class="w-full object-cover">
+			</video>
+			<!-- <div class="bg-linear-65 from-main-200/50 to-main/30 absolute top-0 left-0 w-full h-full z-10"></div> -->
 
 			<div
-				class="container__banner__info absolute inset-0 flex flex-col items-center justify-center bg-black-app/50 text-center">
-				<span class="opacity-75">Kinesica Fisioterapia</span>
-				<h1 class="uppercase text-6xl lg:text-[5vw] font-bold mb-10">
-					SIN EXCUSAS. SOLO RESULTADOS
+				class="container__banner__info absolute inset-0 flex flex-col items-center justify-center z-20 bg-black-app/60 text-center">
+				<span class="opacity-75 text-4xl text-main-200">Kinesica Fisioterapia</span>
+				<h1 class="uppercase text-6xl lg:text-[5vw] font-bold mb-10 text-main">
+					cuidamos tu cuerpo <br />con el corazón
 				</h1>
-				<h2 class="mb-20 max-w-[70rem] text-center text-4xl">
+				<h2 class="mb-20 max-w-[70rem] text-center text-4xl text-white opacity-50">
 					Recuperación atlética de élite. Maximiza tu rendimiento deportivo con técnicas
 					especializadas en fisioterapia deportiva.
 				</h2>

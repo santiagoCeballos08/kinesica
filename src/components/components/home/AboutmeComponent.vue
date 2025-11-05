@@ -2,10 +2,10 @@
 
 	<section class="container__aboutme__hero max-w-app mx-auto mb-40" id="quienesSomos">
 		<span class="title-section mb-10">Quienes somos</span>
-		<article class="container__info__about grid grid-cols-1 md:grid-cols-2 gap-20">
+		<article class="container__info__about grid grid-cols-1 lg:grid-cols-2 gap-20">
 			<div class="info__about__image">
 				<img src="https://placehold.co/600x1000?text=Kinesica&font=roboto"
-					alt="imagen de quienes somos kinesica" />
+					alt="imagen de quienes somos kinesica" class="w-full" />
 			</div>
 			<article class="container__info p-10">
 				<h2 class="title__about text-title font-bold mb-10 text-main-700">Quienes somos en Kinesica</h2>
@@ -27,7 +27,7 @@
 				<div class="about__icons mt-20 md:mt-50">
 					<div class="icon" v-for="(card, index) in dataKinesica" :id="index">
 						<div
-							class="bg-gradient-to-br from-blue-400 to-main rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+							class="bg-gradient-to-br from-main-600 to-main rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
 							<div class="flex items-center justify-between mb-4">
 								<div class="p-3 bg-white/20 rounded-xl group-hover:bg-white/30 transition-colors">
 									<component :is="card.icon" class="size-15" />

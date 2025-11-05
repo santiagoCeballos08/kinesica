@@ -1,6 +1,6 @@
 <template>
 	<footer
-		class="content__footer__hero bg-main text-white-app min-h-[30rem] grid lg:grid-cols-4 text-center lg:text-start p-20">
+		class="content__footer__hero bg-main-900 text-white-app min-h-[30rem] grid lg:grid-cols-4 text-center lg:text-start p-20">
 		<section class="col-span-2">
 			<figure class="w-fit mx-auto mb-4 max-w-50">
 				<img src="/assets/logo.webp" alt="" />

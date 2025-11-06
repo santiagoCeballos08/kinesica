@@ -77,8 +77,9 @@
 		@apply flex gap-4
 	}
 	.card__profesional {
-		@apply mx-auto
+		@apply mx-auto bg-white-app
 	}
+
 }
 
 /* ------------------------------------------------------------------------- configuracion base del aplicativo ------------------------------------------------------------------------- */

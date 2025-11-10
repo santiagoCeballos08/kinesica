@@ -1,5 +1,5 @@
 <template>
-	<article class="container__banner__hero w-full mb-40" id="inicio">
+	<article class="container__banner__hero w-full " id="inicio">
 		<section class="container__banner relative">
 			<video class="w-full absolute top-0 z-5 h-full object-cover" autoplay loop muted playsinline>
 				<source src="/assets/banner.webm" type="video/mp4">
@@ -9,7 +9,7 @@
 			<div class="bg-linear-65 from-main-200/20 to-black-app/50 absolute top-0 left-0 w-full h-full z-10"></div>
 
 			<div
-				class="container__banner__info relative flex flex-col items-center justify-center z-20 lg:min-h-[90vh]  text-center p-10">
+				class="container__banner__info relative flex flex-col items-center justify-center z-20 lg:min-h-[100vh]  text-center p-10">
 				<span class="opacity-75 lg:text-4xl text-main-200">Kinesica Fisioterapia</span>
 				<h1 class="uppercase text-6xl lg:text-[5vw] font-bold mb-10 text-main">
 					cuidamos tu cuerpo <br />con el corazón
@@ -29,6 +29,7 @@
 				<arrow-down-icon class="" />
 			</div>
 		</section>
+		<!-- <div class="h-40 bg-black-app from-black-app to-transparent bg-linear-180"></div> -->
 	</article>
 </template>
 

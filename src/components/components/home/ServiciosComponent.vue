@@ -42,10 +42,10 @@ onMounted(() => {
 			<section class="contenct__service">
 				<article class="card__services">
 					<picture class="card__img">
-						<img src="/assets/presoTerapia.webp" alt="imagen de presoterapia">
+						<img src="/assets/presoTerapia.webp" alt="imagen de presoterapia" class="max-w-[40rem]">
 					</picture>
 					<div class="card__info">
-						<h2>PRESOTERAPIA</h2>
+						<h2 class="card__info__title">Que es la <span>Preso terapia</span> </h2>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
 							atque
@@ -73,6 +73,7 @@ onMounted(() => {
 	/* cada panel ocupa el ancho de la ventana */
 	height: 100vh;
 	display: flex;
+	padding: 2rem;
 	align-items: center;
 	justify-content: center;
 	font-size: 3rem;
@@ -85,7 +86,17 @@ onMounted(() => {
 .card__services {
 	display: flex;
 	flex-direction: column;
+	max-width: 180rem;
+	width: 90%;
 }
 
-.card__services {}
+@media (width > 1024px) {
+	.card__services {
+		flex-direction: row;
+	}
+}
+
+.card__services .card__info .card__info__title span {
+	font-weight: 800;
+}
 </style>

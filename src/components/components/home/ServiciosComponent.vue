@@ -12,7 +12,7 @@ const scrollContainer = ref(null)
 
 // iniciamos el scroll horizontal
 onMounted(() => {
-	const sections = gsap.utils.toArray('.panel')
+	const sections = gsap.utils.toArray('.contenct__service')
 	const totalWidth = scrollContainer.value.scrollWidth
 	const viewportWidth = window.innerWidth
 	const scrollDistance = totalWidth - viewportWidth
@@ -39,22 +39,36 @@ onMounted(() => {
 	<section ref="horizontalSection" class="content__hero__servicios h-screen overflow-hidden">
 		<section ref="scrollContainer" class="content__servicios flex h-full w-max ">
 
-			<div class="panel">
-				<p>panel 1</p>
-			</div>
-			<div class="panel">
+			<section class="contenct__service">
+				<article class="card__services">
+					<picture class="card__img">
+						<img src="/assets/presoTerapia.webp" alt="imagen de presoterapia">
+					</picture>
+					<div class="card__info">
+						<h2>PRESOTERAPIA</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
+							atque
+							aperiam laboriosam, adipisci mollitia itaque corrupti tempore nam saepe unde labore nihil?
+							Libero commodi voluptate nihil neque nostrum?
+						</p>
+
+					</div>
+				</article>
+			</section>
+			<section class="contenct__service">
 				<p>panel 2</p>
-			</div>
-			<div class="panel">
+			</section>
+			<section class="contenct__service">
 				<p>panel 3</p>
-			</div>
+			</section>
 
 		</section>
 	</section>
 </template>
 
 <style scoped>
-.panel {
+.contenct__service {
 	flex: 0 0 100vw;
 	/* cada panel ocupa el ancho de la ventana */
 	height: 100vh;
@@ -62,8 +76,16 @@ onMounted(() => {
 	align-items: center;
 	justify-content: center;
 	font-size: 3rem;
-	background: #222;
+	background: var(--color-black-app);
 	color: white;
-	border-right: 2px solid #333;
+
 }
+
+
+.card__services {
+	display: flex;
+	flex-direction: column;
+}
+
+.card__services {}
 </style>

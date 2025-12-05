@@ -51,7 +51,7 @@
 	}
 
 	.boton-contacto {
-		@apply px-10 py-6 bg-main shadow-md text-center lg:text-3xl flex justify-center items-center gap-4;
+		@apply px-10 py-6 bg-main shadow-md text-center lg:text-3xl flex justify-center items-center gap-4 rounded-2xl;
 	}
 
 	.title-section {

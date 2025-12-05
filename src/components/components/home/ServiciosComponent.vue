@@ -2,6 +2,8 @@
 import { onMounted, onUnmounted, ref, nextTick } from 'vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import zapIcon from '@/assets/icons/zapIcon.vue';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,19 +62,15 @@ onMounted(async () => {
 
 			// --- Animación de Imagen ---
 			if (imgEl && imgWrapper) {
-				// 1. Animación de Entrada (Modificada para parallax)
 				gsap.fromTo(imgEl,
 					{
-						scale: 1.4, // Empezamos un poco más grande
+						scale: 1.4,
 						opacity: 0,
 						filter: 'blur(10px)',
 						rotation: -5
 					},
 					{
-						// --- CAMBIO CLAVE AQUÍ ---
-						// En lugar de scale: 1, lo dejamos en 1.15.
-						// Esto asegura que la imagen siempre sea más grande que el contenedor,
-						// permitiendo que se mueva sin dejar huecos.
+
 						scale: 1.15,
 						opacity: 1,
 						filter: 'blur(0px)',
@@ -90,23 +88,19 @@ onMounted(async () => {
 					}
 				);
 
-				// 2. NUEVA: Animación de Parallax Horizontal
-				// Esta animación corre en paralelo y mueve la imagen dentro de su caja
 				gsap.fromTo(imgEl,
 					{
-						xPercent: -15 // Empieza desplazada a la izquierda dentro de su caja
+						xPercent: -15
 					},
 					{
-						xPercent: 15, // Termina desplazada a la derecha
-						ease: 'none', // El parallax siempre debe ser lineal ('none')
+						xPercent: 15,
+						ease: 'none',
 						scrollTrigger: {
-							trigger: imgWrapper, // Usamos el wrapper como trigger
-							containerAnimation: scrollTween, // Vinculado al scroll principal
-							// El parallax debe durar TODO el tiempo que el elemento es visible
-							start: 'left right', // Empieza cuando el borde IZQUIERDO del wrapper entra por la DERECHA del viewport
-							end: 'right left',   // Termina cuando el borde DERECHO del wrapper sale por la IZQUIERDA
-							scrub: true,         // Sincroniza la animación con la velocidad del scroll
-							// markers: true     // Activa para depurar si lo necesitas
+							trigger: imgWrapper,
+							containerAnimation: scrollTween,
+							start: 'left right',
+							end: 'right left',
+							scrub: true,
 						}
 					}
 				);
@@ -154,12 +148,45 @@ onUnmounted(() => {
 						<h2 class="card__info__title text-4xl lg:text-6xl font-bold mb-6">
 							Qué es la <span class="text-main-400">Presoterapia</span>
 						</h2>
-						<p class="text-lg lg:text-4xl leading-relaxed text-gray-300">
+						<p class="text-lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
 							atque aperiam laboriosam.
 						</p>
-						<article class="card__info__sensibilitys ">
-							<h2>secciones principales</h2>
+						<article
+							class="card__info__sensibilitys grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10">
+							<div
+								class="caracteristicas flex backdrop-blur-md bg-white/5 border border-white/30 p-10 rounded-2xl gap-8">
+								<zap-icon class="size-12 w-[50px] bg-main/50 p-4 rounded-2xl h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<div
+								class="caracteristicas flex backdrop-blur-md bg-white/5 border border-white/30 p-10 rounded-2xl gap-8">
+								<zap-icon class="size-12 w-[50px] bg-main/50 p-4 rounded-2xl h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<div
+								class="caracteristicas flex backdrop-blur-md bg-white/5 border border-white/30 p-10 rounded-2xl gap-8">
+								<zap-icon class="size-12 w-[50px] bg-main/50 p-4 rounded-2xl h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<div
+								class="caracteristicas flex backdrop-blur-md bg-white/5 border border-white/30 p-10 rounded-2xl gap-8">
+								<zap-icon class="size-12 w-[50px] bg-main/50 p-4 rounded-2xl h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+
 						</article>
 
 						<button class="boton-contacto">Agendar Sesión</button>

@@ -234,7 +234,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<section ref="horizontalSection" class="relative overflow-hidden">
+	<section ref="horizontalSection" class="relative overflow-hidden mb-4" id="services">
 		<div ref="scrollContainer" class="flex w-max h-screen">
 
 			<!-- panel de seccion de servicios -->

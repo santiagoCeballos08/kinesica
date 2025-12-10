@@ -66,12 +66,15 @@
 
 <script setup>
 import { format } from '@formkit/tempo';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+
+const year = ref('')
+
 
 // cuando el componente se genere
 onMounted(() => {
 	const date = new Date();
-	const year = format(date, 'YYYY');
+	year.value = format(date, 'YYYY');
 });
 </script>
 

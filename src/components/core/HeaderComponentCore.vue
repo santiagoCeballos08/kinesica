@@ -18,7 +18,7 @@
 					</router-link>
 				</li>
 				<li class="header__itmes text-main-700">
-					<router-link :to="{ path: '/', hash: '#nuestrosServicios' }">
+					<router-link :to="{ path: '/', hash: '#services' }">
 						Nuestros servicios
 					</router-link>
 				</li>

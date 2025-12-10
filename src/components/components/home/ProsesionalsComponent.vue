@@ -2,10 +2,10 @@
 import InstagramIcon from '@/assets/icons/InstagramIcon.vue';
 import FacebookIcon from '../../../assets/icons/FacebookIcon.vue';
 import LinkedingIcon from '@/assets/icons/LinkedingIcon.vue';
-import { ref } from 'vue';
+import { reactive, markRaw } from 'vue';
 
 
-const profesionales = ref([
+const profesionales = markRaw([
 	{
 		name: 'Camila Gaviria',
 		profesion: 'Profesional Fisioterapeuta',
@@ -58,7 +58,7 @@ const profesionales = ref([
 
 
 <template>
-	<section class="content__profesionals__hero bg-main-50 p-10">
+	<section class="content__profesionals__hero bg-main-50 p-10" id="profesionales">
 		<section class="content_title max-w-app mx-auto p-10">
 			<h2 class="text-4xl font-semibold bg-main text-white-app w-fit p-4">Equipo de trabajo</h2>
 			<h2 class="text-title font-bold">Profesionales</h2>

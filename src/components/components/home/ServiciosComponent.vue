@@ -2,8 +2,12 @@
 import { onMounted, onUnmounted, ref, nextTick } from 'vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import zapIcon from '@/assets/icons/zapIcon.vue';
 
+// icons personalizados
+import zapIcon from '@/assets/icons/zapIcon.vue';
+import ActivityIcon from '@/assets/icons/ActivityIcon.vue';
+import ClockIcon from '@/assets/icons/ClockIcon.vue';
+import { FaceSmileIcon } from '@heroicons/vue/24/outline';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,6 +45,8 @@ onMounted(async () => {
 			const text = panel.querySelector('p');
 			const sensibilitys = panel.querySelector('.card__info__sensibilitys');
 			const boton = panel.querySelector('.boton-contacto');
+			const elementos = panel.querySelectorAll('.caracteristica')
+			const indicadores = panel.querySelectorAll('.indicador')
 
 
 			if (sensibilitys) {
@@ -142,88 +148,82 @@ onMounted(async () => {
 				})
 			}
 
-
-			if (typeof caracteristica === 'object') {
-				console.log('entro a las caracteristicas')
-			}
-		});
-
-
-		// if el tamaño de la pantalla es menos a 768px entonces se habilita el slider
-		if (window.innerWidth < 768) {
-			const elementos = document.querySelectorAll('.caracteristica');
-			const indicadores = document.querySelectorAll('.indicador');
-			let indiceActual = 0;
-			let intervalo;
+			// if el tamaño de la pantalla es menos a 768px entonces se habilita el slider
+			if (window.innerWidth < 768) {
+				let indiceActual = 0;
+				let intervalo;
 
 
-			elementos.forEach((el, i) => {
-				gsap.set(el, {
-					x: i === 0 ? '0%' : '100%'
-				});
-			});
-
-			function cambiarSlide(nuevoIndice) {
-				if (nuevoIndice === indiceActual) return;
-
-				// Detener intervalo
-				if (intervalo) clearInterval(intervalo);
-
-				const actual = elementos[indiceActual];
-				const siguiente = elementos[nuevoIndice];
-
-				// Actualizar indicadores
-				indicadores[indiceActual].classList.remove('activo');
-				indicadores[nuevoIndice].classList.add('activo');
-
-				// Animación: el siguiente empuja al actual
-				const tl = gsap.timeline({
-					onComplete: () => {
-						// Reiniciar posición del slide que salió
-						gsap.set(actual, { x: '100%' });
-						iniciarCarruselAutomatico();
-					}
+				elementos.forEach((el, i) => {
+					gsap.set(el, {
+						x: i === 0 ? '0%' : '100%'
+					});
 				});
 
-				// El actual sale hacia la izquierda
-				tl.to(actual, {
-					x: '-100%',
-					duration: 0.8,
-					ease: 'power2.inOut'
-				})
-					// El siguiente entra desde la derecha simultáneamente
-					.to(siguiente, {
-						x: '0%',
+				function cambiarSlide(nuevoIndice) {
+					if (nuevoIndice === indiceActual) return;
+
+					// Detener intervalo
+					if (intervalo) clearInterval(intervalo);
+
+					const actual = elementos[indiceActual];
+					const siguiente = elementos[nuevoIndice];
+
+					// Actualizar indicadores
+					indicadores[indiceActual].classList.remove('activo');
+					indicadores[nuevoIndice].classList.add('activo');
+
+					// Animación: el siguiente empuja al actual
+					const tl = gsap.timeline({
+						onComplete: () => {
+							// Reiniciar posición del slide que salió
+							gsap.set(actual, { x: '100%' });
+							iniciarCarruselAutomatico();
+						}
+					});
+
+					// El actual sale hacia la izquierda
+					tl.to(actual, {
+						x: '-100%',
 						duration: 0.8,
 						ease: 'power2.inOut'
-					}, '<'); // '<' significa "al mismo tiempo que la animación anterior"
+					})
+						// El siguiente entra desde la derecha simultáneamente
+						.to(siguiente, {
+							x: '0%',
+							duration: 0.8,
+							ease: 'power2.inOut'
+						}, '<'); // '<' significa "al mismo tiempo que la animación anterior"
 
-				indiceActual = nuevoIndice;
-			}
+					indiceActual = nuevoIndice;
+				}
 
 
-			// Avanzar al siguiente slide
-			function siguienteSlide() {
-				const siguiente = (indiceActual + 1) % elementos.length;
-				cambiarSlide(siguiente);
-			}
+				// Avanzar al siguiente slide
+				function siguienteSlide() {
+					const siguiente = (indiceActual + 1) % elementos.length;
+					cambiarSlide(siguiente);
+				}
 
-			// Iniciar carrusel automático
-			function iniciarCarruselAutomatico() {
-				if (intervalo) clearInterval(intervalo);
-				intervalo = setInterval(siguienteSlide, 4000);
-			}
+				// Iniciar carrusel automático
+				function iniciarCarruselAutomatico() {
+					if (intervalo) clearInterval(intervalo);
+					intervalo = setInterval(siguienteSlide, 4000);
+				}
 
-			// Event listeners para indicadores
-			indicadores.forEach((indicador, index) => {
-				indicador.addEventListener('click', () => {
-					cambiarSlide(index);
+				// Event listeners para indicadores
+				indicadores.forEach((indicador, index) => {
+					indicador.addEventListener('click', () => {
+						cambiarSlide(index);
+					});
 				});
-			});
 
-			iniciarCarruselAutomatico();
+				iniciarCarruselAutomatico();
 
-		}
+			}
+
+		});
+
 
 	}, horizontalSection.value);
 });
@@ -237,6 +237,7 @@ onUnmounted(() => {
 	<section ref="horizontalSection" class="relative overflow-hidden">
 		<div ref="scrollContainer" class="flex w-max h-screen">
 
+			<!-- panel de seccion de servicios -->
 			<section class="contenct__service bg-black-app text-white">
 				<article
 					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
@@ -247,6 +248,76 @@ onUnmounted(() => {
 					<div class="card__info w-full lg:w-1/2">
 						<h2 class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
 							Qué es la <span class="text-main-400">Presoterapia</span>
+						</h2>
+						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
+							atque aperiam laboriosam.
+						</p>
+						<article
+							class="card__info__sensibilitys relative lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10 flex flex-col">
+
+							<!-- card informacion  -->
+							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="0">
+								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<!-- card informacion  -->
+							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="1">
+								<activity-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<!-- card informacion  -->
+							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="2">
+								<clock-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<!-- card informacion  -->
+							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="3">
+								<FaceSmileIcon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+
+						</article>
+
+						<div class="indicadores lg:hidden">
+							<div class="indicador activo"></div>
+							<div class="indicador"></div>
+							<div class="indicador"></div>
+							<div class="indicador"></div>
+						</div>
+
+						<a href="" class="boton-contacto">Agendar Sesión </a>
+					</div>
+				</article>
+			</section>
+
+			<!-- panel de seccion de serivicios -->
+			<section class="contenct__service bg-black-app text-white">
+				<article
+					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
+					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl">
+						<img src="/public/assets/presoTerapia.webp" alt="presoterapia"
+							class="object-cover w-full h-full">
+					</picture>
+					<div class="card__info w-full lg:w-1/2">
+						<h2 class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
+							Qué es la <span class="text-main-400">Maso terapia</span>
 						</h2>
 						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
@@ -306,38 +377,72 @@ onUnmounted(() => {
 				</article>
 			</section>
 
-			<section class="contenct__service bg-black-app text-white">
-				<article
-					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
-
-					<div class="card__info w-full lg:w-1/2">
-						<h2 class="card__info__title text-4xl lg:text-6xl font-bold mb-6">
-							Beneficios <span class="text-main-400">Naturales</span>
-						</h2>
-						<p class="text-lg lg:text-4xl leading-relaxed text-gray-300">
-							Adipisci mollitia itaque corrupti tempore nam saepe unde labore nihil?
-							Libero commodi voluptate nihil neque nostrum?
-						</p>
-					</div>
-					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl">
-						<img src="" alt="otra imagen" class="object-cover w-full h-full">
-					</picture>
-				</article>
-			</section>
-
+			<!-- panel de seccion de serivicios -->
 			<section class="contenct__service bg-black-app text-white">
 				<article
 					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
 					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl">
-						<img src="" alt="tercera imagen" class="object-cover w-full h-full">
+						<img src="/public/assets/presoTerapia.webp" alt="presoterapia"
+							class="object-cover w-full h-full">
 					</picture>
 					<div class="card__info w-full lg:w-1/2">
-						<h2 class="card__info__title text-4xl lg:text-6xl font-bold mb-6">
-							Resultados <span class="text-main-400">Garantizados</span>
+						<h2 class="card__info__title text-8xl text-center lg:text-start lg:text-6xl font-bold mb-6">
+							Qué es la <span class="text-main-400">Fisioterapia</span>
 						</h2>
-						<p class="text-lg lg:text-4xl leading-relaxed text-gray-300">
-							Perspiciatis temporibus tenetur atque aperiam laboriosam.
+						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
+							atque aperiam laboriosam.
 						</p>
+						<article
+							class="card__info__sensibilitys relative lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10 flex flex-col">
+
+							<!-- card informacion  -->
+							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="0">
+								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<!-- card informacion  -->
+							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="1">
+								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<!-- card informacion  -->
+							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="2">
+								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+							<!-- card informacion  -->
+							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								data-index="3">
+								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
+								<div>
+									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
+									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+								</div>
+							</div>
+
+						</article>
+
+						<div class="indicadores lg:hidden">
+							<div class="indicador activo"></div>
+							<div class="indicador"></div>
+							<div class="indicador"></div>
+							<div class="indicador"></div>
+						</div>
+
+						<a href="" class="boton-contacto">Agendar Sesión </a>
 					</div>
 				</article>
 			</section>
@@ -362,9 +467,7 @@ onUnmounted(() => {
 	background-color: #1a1a1a;
 }
 
-.text-main-400 {
-	color: #3b82f6;
-}
+
 
 .card__info__sensibilitys {
 	max-height: 15rem;

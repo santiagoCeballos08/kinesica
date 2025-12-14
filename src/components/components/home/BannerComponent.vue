@@ -6,13 +6,13 @@
 				<!-- Provide a fallback image if video doesn't load -->
 				<img src="https://placehold.co/1400x600" alt="video kinesica R" class="w-full object-cover">
 			</video>
-			<div class="bg-linear-65 from-main-200/20 to-black-app/50 absolute top-0 left-0 w-full h-full z-10"></div>
+			<div class="bg-linear-65 from-black/40 to-black-app/80 absolute top-0 left-0 w-full h-full z-10"></div>
 
 			<div
 				class="container__banner__info relative flex flex-col items-center justify-center z-20 lg:min-h-[100vh]  text-center p-10">
-				<span class="opacity-75 lg:text-4xl text-main-200">Kinesica Fisioterapia</span>
+				<span class="opacity-75 lg:text-4xl text-white ">Kinesica Fisioterapia</span>
 				<h1 class="uppercase text-6xl lg:text-[5vw] font-bold mb-10 text-main">
-					cuidamos tu cuerpo <br />con el corazón
+					cuidamos tu cuerpo <br /> con el <span class="text-main-200"> corazón</span>
 				</h1>
 				<h2 class="mb-20 max-w-[70rem] text-center   lg:text-4xl text-white opacity-50">
 					Recuperación atlética de élite. Maximiza tu rendimiento deportivo con técnicas

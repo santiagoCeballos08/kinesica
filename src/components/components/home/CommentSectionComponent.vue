@@ -2,11 +2,11 @@
 	<section>
 		<div class="bg-gray-50 py-16 overflow-hidden">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-				<div class="text-center">
-					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+				<div class="text-center title__header ">
+					<h2 class=" font-bold text-gray-900 mb-4">
 						Lo que dicen nuestros pacientes
 					</h2>
-					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+					<p class="text-4xl text-gray-600 max-w-2xl mx-auto">
 						Nuestros pacientes han confiado en nosotros para su recuperación
 					</p>
 				</div>

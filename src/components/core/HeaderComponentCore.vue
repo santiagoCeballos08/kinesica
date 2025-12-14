@@ -30,7 +30,7 @@
 					<router-link :to="{ path: '/', hash: '#precios' }">Planes</router-link>
 				</li>
 				<li class="header__itmes text-main-700">
-					<router-link :to="{ path: '/', hash: '#contacto' }">Contactanos</router-link>
+					<router-link :to="{ path: '/contacto', hash: '' }">Contactanos</router-link>
 				</li>
 			</ul>
 		</nav>

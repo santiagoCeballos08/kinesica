@@ -386,7 +386,7 @@ onUnmounted(() => {
 							class="object-cover w-full h-full">
 					</picture>
 					<div class="card__info w-full lg:w-1/2">
-						<h2 class="card__info__title text-8xl text-center lg:text-start lg:text-6xl font-bold mb-6">
+						<h2 class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
 							Qué es la <span class="text-main-400">Fisioterapia</span>
 						</h2>
 						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">

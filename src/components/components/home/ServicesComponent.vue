@@ -259,8 +259,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="0">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl  h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -268,8 +269,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="1">
-								<activity-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<activity-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -277,8 +279,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="2">
-								<clock-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<clock-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -286,8 +289,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="3">
-								<FaceSmileIcon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<FaceSmileIcon
+									class="caracteristica__icon  size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -329,8 +333,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="0">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -338,8 +343,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="1">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -347,8 +353,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="2">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -356,8 +363,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="3">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -399,8 +407,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="0">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -408,8 +417,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="1">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -417,8 +427,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="2">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -426,8 +437,9 @@ onUnmounted(() => {
 							<!-- card informacion  -->
 							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
 								data-index="3">
-								<zap-icon class="size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-fit  lg:h-full" />
-								<div>
+								<zap-icon
+									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
+								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
 									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
 								</div>
@@ -469,6 +481,8 @@ onUnmounted(() => {
 
 
 
+
+
 .card__info__sensibilitys {
 	max-height: 15rem;
 	height: 12rem;
@@ -476,10 +490,23 @@ onUnmounted(() => {
 
 }
 
+.caracteristica__description h3 {
+	text-align: center;
+}
+
 @media (width >=1024px) {
 	.card__info__sensibilitys {
 		max-height: none;
 		height: auto;
+	}
+
+	.caracteristica__icon {
+		flex: 1 0 25%;
+	}
+
+
+	.caracteristica__description h3 {
+		text-align: initial;
 	}
 }
 

@@ -9,24 +9,27 @@
 			<div class="bg-linear-65 from-black/40 to-black-app/80 absolute top-0 left-0 w-full h-full z-10"></div>
 
 			<div
-				class="container__banner__info relative flex flex-col items-center justify-center z-20 lg:min-h-[100vh]  text-center p-10">
-				<span class="opacity-75 lg:text-4xl text-white ">Kinesica Fisioterapia</span>
-				<h1 class="uppercase text-6xl lg:text-[5vw] font-bold mb-10 text-main">
+				class="container__banner__info relative flex flex-col items-center justify-center z-20 min-h-[100vh]  text-center p-10">
+				<span class="opacity-75 md:text-4xl text-white ">Kinesica Fisioterapia</span>
+				<h1 class="uppercase text-6xl md:text-[5vw] font-bold mb-10 text-main">
 					cuidamos tu cuerpo <br /> con el <span class="text-main-200"> corazón</span>
 				</h1>
 				<h2 class="mb-20 max-w-[70rem] text-center   lg:text-4xl text-white opacity-50">
 					Recuperación atlética de élite. Maximiza tu rendimiento deportivo con técnicas
 					especializadas en fisioterapia deportiva.
 				</h2>
-				<section class="container__button__banner flex gap-8 lg:gap-10 flex-wrap mb-20 md:mb-40 justify-center">
-					<a href="" class="boton-contacto">Agenda con nosotros <calendar-days-icon class="size-20 inline" />
-					</a>
+				<section
+					class="container__button__banner w-full flex flex-col md:flex-row justify-center gap-8 mb-20 items-center">
+					<a href="" class="boton-contacto">Agenda con una cita <calendar-days-icon class="size-10" /> </a>
 					<a href="" class="boton-contacto group hover:scale-100">
 						Saber Más
-						<ArrowLongRightIcon class="size-10 rotate-[-45deg] group-hover:scale-150 transition-all" />
+						<ArrowLongRightIcon class="size-10 " />
 					</a>
 				</section>
-				<arrow-down-icon class="" />
+				<router-link :to="{ path: '/', hash: '#services' }">
+					<arrow-down-icon />
+				</router-link>
+
 			</div>
 		</section>
 		<!-- <div class="h-40 bg-black-app from-black-app to-transparent bg-linear-180"></div> -->
@@ -37,6 +40,8 @@
 import { CalendarDaysIcon } from '@heroicons/vue/24/outline';
 import { ArrowLongRightIcon } from '@heroicons/vue/24/outline';
 import ArrowDownIcon from '@/assets/icons/ArrowDownIcon.vue';
+
+
 </script>
 
 <style scoped>

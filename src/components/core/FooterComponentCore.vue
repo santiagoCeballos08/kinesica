@@ -25,31 +25,32 @@
 				<ul class="content">
 					<li>
 						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }">Inicio</router-link>
+							:to="{ path: '/', hash: '#inicio' }">Inicio</router-link>
 					</li>
 					<li>
 						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }">Servicios</router-link>
+							:to="{ path: '/', hash: '#services' }">Servicios</router-link>
 					</li>
 					<li>
 						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }">Profesionales</router-link>
+							:to="{ path: '/', hash: '#profesionales' }">Profesionales</router-link>
 					</li>
 					<li>
 						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }">Planes</router-link>
+							:to="{ path: '/', hash: '#precios' }">Planes</router-link>
 					</li>
 					<li>
 						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '' }">Contacto</router-link>
+							:to="{ path: '/contacto', hash: '' }">Contacto</router-link>
 					</li>
 				</ul>
 			</section>
 			<section class="footer__links__contacto">
-				<h3 class="font-semibold">Contacto</h3>
-				<ul class="content">
-					<li></li>
-					<li></li>
+				<h3 class="font-semibold mb-4">Contacto</h3>
+				<ul class="content flex flex-col items-center gap-4">
+					<li><a href=""><instagram-icon class="size-20" color="#fff" /></a></li>
+					<li><a href="https://www.tiktok.com/@kinesica5?lang=es" target="_blank"><tiktok-icon
+								class="size-20" /></a></li>
 					<li></li>
 				</ul>
 			</section>
@@ -65,6 +66,11 @@
 </template>
 
 <script setup>
+// icono de redes sociales
+import InstagramIcon from '@/assets/icons/InstagramIcon.vue';
+import TiktokIcon from '@/assets/icons/tiktokIcon.vue';
+
+
 import { format } from '@formkit/tempo';
 import { onMounted, ref } from 'vue';
 

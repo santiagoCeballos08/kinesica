@@ -65,7 +65,7 @@ onMounted(async () => {
 					scrollTrigger: {
 						trigger: panel,
 						containerAnimation: scrollTween,
-						start: 'top 10%',
+						start: 'top 90%',
 						toggleActions: 'play none none reverse',
 					}
 				});
@@ -129,7 +129,7 @@ onMounted(async () => {
 					scrollTrigger: {
 						trigger: panel,
 						containerAnimation: scrollTween,
-						start: 'left 50%',
+						start: 'left 10%',
 						toggleActions: 'play none none reverse',
 					}
 				});
@@ -147,7 +147,7 @@ onMounted(async () => {
 					scrollTrigger: {
 						trigger: panel,
 						containerAnimation: scrollTween,
-						start: 'left 50%',
+						start: 'left 10%',
 						toggleActions: 'play none none reverse',
 					}
 				})
@@ -269,7 +269,7 @@ onUnmounted(() => {
 									class="caracteristica__icon size-12 w-[50px] lg:max-w-[6.5rem]  bg-main/50 p-4 rounded-2xl  h-auto lg:max-h-fit  lg:h-full" />
 								<div class="caracteristica__description">
 									<h3 class="text-4xl font-semibold">{{ characteristic.title }}</h3>
-									<p class="opacity-80">{{ characteristic.description }}</p>
+									<p class="opacity-80"> {{ characteristic.description }}</p>
 								</div>
 							</div>
 
@@ -282,7 +282,10 @@ onUnmounted(() => {
 							<div class="indicador"></div>
 						</div>
 
-						<a :href="service.uri" class="boton-contacto">Agendar Sesión </a>
+						<a :href="service.uri"
+							class="boton-contacto p-4 rounded-2xl  border border-transparent  hover:border-main-200 hover:shadow-[0_0_15px_rgba(192,231,225,0.3)]">
+							Agendar Sesión
+						</a>
 					</div>
 				</article>
 			</section>
@@ -303,13 +306,11 @@ onUnmounted(() => {
 	flex-shrink: 0;
 }
 
+
 /* Tus colores personalizados */
 .bg-black-app {
 	background-color: #1a1a1a;
 }
-
-
-
 
 
 .card__info__sensibilitys {

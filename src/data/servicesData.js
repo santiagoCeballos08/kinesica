@@ -11,7 +11,7 @@ export const servicesData = [
 	{
 		id : 1,
 		title : 'Qué es la <span class="text-main-400">Presoterapia</span>',
-		description : '		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur <br> atque aperiam laboriosam.',
+		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
 		characteristics : [
@@ -40,7 +40,7 @@ export const servicesData = [
 	{
 		id : 2,
 		title : 'Qué es la <span class="text-main-400">Presoterapia</span>',
-		description : '		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur <br> atque aperiam laboriosam.',
+		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
 		characteristics : [
@@ -69,7 +69,7 @@ export const servicesData = [
 	{
 		id : 3,
 		title : 'Qué es la <span class="text-main-400">Presoterapia</span>',
-		description : '		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur <br> atque aperiam laboriosam.',
+		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
 		characteristics : [

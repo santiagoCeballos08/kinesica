@@ -1,5 +1,5 @@
 <template>
-	<div :class="customClass" class="inline-block max-w-full size-10">
+	<div :class="customClass" class="inline-block max-w-full size-10 aspect-square">
 		<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
 			<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
 			<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

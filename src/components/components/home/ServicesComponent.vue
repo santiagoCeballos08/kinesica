@@ -9,11 +9,16 @@ import ActivityIcon from '@/assets/icons/ActivityIcon.vue';
 import ClockIcon from '@/assets/icons/ClockIcon.vue';
 import { FaceSmileIcon } from '@heroicons/vue/24/outline';
 
+// importamos los datos de los servicios
+import { servicesData } from '@/data/servicesData';
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const horizontalSection = ref(null);
 const scrollContainer = ref(null);
 let ctx = null;
+
 
 onMounted(async () => {
 	await nextTick();
@@ -60,7 +65,7 @@ onMounted(async () => {
 					scrollTrigger: {
 						trigger: panel,
 						containerAnimation: scrollTween,
-						start: 'left 50%',
+						start: 'top 10%',
 						toggleActions: 'play none none reverse',
 					}
 				});
@@ -149,7 +154,7 @@ onMounted(async () => {
 			}
 
 			// if el tamaño de la pantalla es menos a 768px entonces se habilita el slider
-			if (window.innerWidth < 768) {
+			if (window.innerWidth <= 768) {
 				let indiceActual = 0;
 				let intervalo;
 
@@ -238,7 +243,8 @@ onUnmounted(() => {
 		<div ref="scrollContainer" class="flex w-max h-screen">
 
 			<!-- panel de seccion de servicios -->
-			<section class="contenct__service bg-black-app text-white">
+			<section class="contenct__service bg-black-app text-white" v-for="service in servicesData"
+				:key="service.id">
 				<article
 					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
 					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl">
@@ -246,54 +252,24 @@ onUnmounted(() => {
 							class="object-cover w-full h-full">
 					</picture>
 					<div class="card__info w-full lg:w-1/2">
-						<h2 class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
-							Qué es la <span class="text-main-400">Presoterapia</span>
+						<h2 v-html="service.title"
+							class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
+
 						</h2>
 						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
-							atque aperiam laboriosam.
+							{{ service.description }}
 						</p>
 						<article
 							class="card__info__sensibilitys relative lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10 flex flex-col">
 
 							<!-- card informacion  -->
 							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="0">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl  h-auto lg:max-h-fit  lg:h-full" />
+								v-for="(characteristic, index) in service.characteristics" :data-index="index">
+								<component :is="characteristic.icon"
+									class="caracteristica__icon size-12 w-[50px] lg:max-w-[6.5rem]  bg-main/50 p-4 rounded-2xl  h-auto lg:max-h-fit  lg:h-full" />
 								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="1">
-								<activity-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="2">
-								<clock-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="3">
-								<FaceSmileIcon
-									class="caracteristica__icon  size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
+									<h3 class="text-4xl font-semibold">{{ characteristic.title }}</h3>
+									<p class="opacity-80">{{ characteristic.description }}</p>
 								</div>
 							</div>
 
@@ -306,158 +282,11 @@ onUnmounted(() => {
 							<div class="indicador"></div>
 						</div>
 
-						<a href="" class="boton-contacto">Agendar Sesión </a>
+						<a :href="service.uri" class="boton-contacto">Agendar Sesión </a>
 					</div>
 				</article>
 			</section>
 
-			<!-- panel de seccion de serivicios -->
-			<section class="contenct__service bg-black-app text-white">
-				<article
-					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
-					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl">
-						<img src="/public/assets/presoTerapia.webp" alt="presoterapia"
-							class="object-cover w-full h-full">
-					</picture>
-					<div class="card__info w-full lg:w-1/2">
-						<h2 class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
-							Qué es la <span class="text-main-400">Maso terapia</span>
-						</h2>
-						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
-							atque aperiam laboriosam.
-						</p>
-						<article
-							class="card__info__sensibilitys relative lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10 flex flex-col">
-
-							<!-- card informacion  -->
-							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="0">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="1">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="2">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="3">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-
-						</article>
-
-						<div class="indicadores lg:hidden">
-							<div class="indicador activo"></div>
-							<div class="indicador"></div>
-							<div class="indicador"></div>
-							<div class="indicador"></div>
-						</div>
-
-						<a href="" class="boton-contacto">Agendar Sesión </a>
-					</div>
-				</article>
-			</section>
-
-			<!-- panel de seccion de serivicios -->
-			<section class="contenct__service bg-black-app text-white">
-				<article
-					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
-					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl">
-						<img src="/public/assets/presoTerapia.webp" alt="presoterapia"
-							class="object-cover w-full h-full">
-					</picture>
-					<div class="card__info w-full lg:w-1/2">
-						<h2 class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
-							Qué es la <span class="text-main-400">Fisioterapia</span>
-						</h2>
-						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur
-							atque aperiam laboriosam.
-						</p>
-						<article
-							class="card__info__sensibilitys relative lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10 flex flex-col">
-
-							<!-- card informacion  -->
-							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="0">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 1</h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="1">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 3 </h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="2">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 4</h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-							<!-- card informacion  -->
-							<div class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								data-index="3">
-								<zap-icon
-									class="caracteristica__icon size-12 w-[50px]  bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit  lg:h-full" />
-								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">Estimulacion 5 </h3>
-									<p class="opacity-80">Activacion de la circulacion sanguinea</p>
-								</div>
-							</div>
-
-						</article>
-
-						<div class="indicadores lg:hidden">
-							<div class="indicador activo"></div>
-							<div class="indicador"></div>
-							<div class="indicador"></div>
-							<div class="indicador"></div>
-						</div>
-
-						<a href="" class="boton-contacto">Agendar Sesión </a>
-					</div>
-				</article>
-			</section>
 
 		</div>
 	</section>
@@ -536,7 +365,7 @@ onUnmounted(() => {
 
 
 
-@media (width < 768px) {
+@media (width <=768px) {
 
 	.caracteristica {
 		position: absolute;

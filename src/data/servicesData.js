@@ -14,6 +14,7 @@ export const servicesData = [
 		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
+		img: '/assets/servicios/masoterapia.webp',
 		characteristics : [
 			{
 				icon : zapIcon,
@@ -43,6 +44,7 @@ export const servicesData = [
 		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
+		img: '/assets/servicios/masoterapia.webp',
 		characteristics : [
 			{
 				icon : zapIcon,
@@ -68,10 +70,11 @@ export const servicesData = [
 	},
 	{
 		id : 3,
-		title : 'Qué es la <span class="text-main-400">Presoterapia</span>',
+		title : 'Qué es la <span class="text-main-400">masoterapia</span>',
 		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
+		img: '/assets/servicios/masoterapia.webp' ,
 		characteristics : [
 			{
 				icon : zapIcon,

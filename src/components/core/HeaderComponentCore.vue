@@ -4,7 +4,7 @@
 		:class="active ? 'h-screen' : 'h-fit'">
 		<div class="content__icon__button flex w-full lg:w-fit justify-between items-center px-4">
 			<figure class="header__icon w-[6rem] lg:h-[5rem] lg:w-[8rem]">
-				<img src="/assets/logo.webp" alt="logo kinesica" />
+				<img src="/assets/img/logos/logo.webp" alt="logo kinesica" />
 			</figure>
 			<bars3-center-left-icon class="size-12 cursor-pointer lg:hidden" @click="toggleMenu" />
 		</div>

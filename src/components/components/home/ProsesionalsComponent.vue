@@ -9,7 +9,7 @@ const profesionales = markRaw([
 	{
 		name: 'Camila Gaviria',
 		profesion: 'Profesional Fisioterapeuta',
-		picture: '',
+		picture: '/assets/img/profesionals/Camila.webp',
 		socials: [
 			{
 				social: 'instagram',
@@ -31,8 +31,8 @@ const profesionales = markRaw([
 	},
 	{
 		name: 'Samuel Gaviria',
-		profesion: 'Profesional Trainer',
-		picture: '',
+		profesion: 'Entrenador Profesional ',
+		picture: '/assets/img/profesionals/samuel.webp',
 		socials: [
 			{
 				social: 'instagram',
@@ -68,7 +68,8 @@ const profesionales = markRaw([
 			<article class="card__profesional " v-for="profesional in profesionales">
 				<figure class="overflow-hidden ">
 					<img :src="profesional.picture == '' ? 'https://placehold.co/600x600' : profesional.picture"
-						alt="imagen de profesional de kinesica" class="hover:scale-125 transition-all hover:rotate-10">
+						alt="imagen de profesional de kinesica"
+						class="hover:scale-125 transition-all hover:rotate-10 min-h-[78rem]">
 				</figure>
 				<article class="card__info">
 					<h2 class="card__info__title">{{ profesional.profesion }} </h2>

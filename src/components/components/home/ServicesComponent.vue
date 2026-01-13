@@ -241,15 +241,14 @@ onUnmounted(() => {
 <template>
 	<section ref="horizontalSection" class="relative overflow-hidden mb-4" id="services">
 		<div ref="scrollContainer" class="flex w-max h-screen">
-
 			<!-- panel de seccion de servicios -->
 			<section class="contenct__service bg-black-app text-white" v-for="service in servicesData"
 				:key="service.id">
 				<article
 					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
-					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl">
-						<img src="/public/assets/presoTerapia.webp" alt="presoterapia"
-							class="object-cover w-full h-full">
+					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl  bg-gradient-to-r bg-black/70">
+						<img :src="service.img" alt="presoterapia"
+							class="object-object w-full h-full aspect-video object-top">
 					</picture>
 					<div class="card__info w-full lg:w-1/2">
 						<h2 v-html="service.title"
@@ -304,6 +303,7 @@ onUnmounted(() => {
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
+
 }
 
 

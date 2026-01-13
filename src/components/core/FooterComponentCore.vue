@@ -2,12 +2,10 @@
 	<footer
 		class="content__footer__hero bg-main-800 text-white-app min-h-[30rem] grid lg:grid-cols-4 text-center lg:text-start p-20">
 		<section class="col-span-2">
-			<figure class="w-fit mx-auto mb-4 max-w-50">
-				<img src="/assets/logo.webp" alt="" />
+			<figure class="w-fit mx-auto mb-4 max-w-96">
+				<img src="/assets/img/logos/logo_white.webp" alt="" />
 			</figure>
-			<p class="line-clamp-3 w-1/2 mx-auto text-4xl uppercase font-bold text-main mb-4 text-center">
-				cuidamos tu cuerpo con el corazón
-			</p>
+
 		</section>
 
 		<article class="content__footer__links col-span-2 flex flex-col lg:flex-row gap-8 justify-around">

@@ -4,8 +4,8 @@
 		<span class="title-section mb-10">Quienes somos</span>
 		<article class="container__info__about grid grid-cols-1 lg:grid-cols-2 gap-20">
 			<div class="info__about__image">
-				<img src="https://placehold.co/600x1000?text=Kinesica&font=roboto"
-					alt="imagen de quienes somos kinesica" class="w-full" />
+				<img src="/assets/img/quienesSomos.webp" alt="imagen de quienes somos kinesica"
+					class="w-full shadow-2xl shadow-main-600/50 rounded-2xl" />
 			</div>
 			<article class="container__info p-10">
 				<h2 class="title__about text-title font-bold mb-10 text-main-700">Quienes somos en Kinesica</h2>

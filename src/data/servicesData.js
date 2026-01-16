@@ -14,7 +14,7 @@ export const servicesData = [
 		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
-		img: '/assets/servicios/masoterapia.webp',
+		img: '/assets/servicios/masoterapiaModelado.webp',
 		characteristics : [
 			{
 				icon : zapIcon,
@@ -44,7 +44,7 @@ export const servicesData = [
 		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
-		img: '/assets/servicios/masoterapia.webp',
+		img: '/assets/servicios/masoterapiaModelado.webp',
 		characteristics : [
 			{
 				icon : zapIcon,
@@ -74,7 +74,7 @@ export const servicesData = [
 		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',
-		img: '/assets/servicios/masoterapia.webp' ,
+		img: '/assets/servicios/masoterapiaModelado.webp' ,
 		characteristics : [
 			{
 				icon : zapIcon,

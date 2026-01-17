@@ -242,11 +242,11 @@ onUnmounted(() => {
 	<section ref="horizontalSection" class="relative overflow-hidden mb-4" id="services">
 		<div ref="scrollContainer" class="flex w-max h-screen">
 			<!-- panel de seccion de servicios -->
-			<section class="contenct__service bg-black-app text-white" v-for="service in servicesData"
-				:key="service.id">
+			<section class="contenct__service bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white"
+				v-for="service in servicesData" :key="service.id">
 				<article
 					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
-					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl  bg-gradient-to-r bg-black/70">
+					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl  bg-gradient-to-r ">
 						<img :src="service.img" alt="presoterapia"
 							class="object-object w-full h-full aspect-video object-top">
 					</picture>

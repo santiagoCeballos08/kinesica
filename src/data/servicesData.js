@@ -40,7 +40,7 @@ export const servicesData = [
 	},
 	{
 		id : 2,
-		title : 'Qué es la <span class="text-main-400">Presoterapia</span>',
+		title : 'Qué es la <span class="text-main-400">Fisioterapia</span>',
 		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
 		uri: '',
 		textButton: 'Agendar Sesión',

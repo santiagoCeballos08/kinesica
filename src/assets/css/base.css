@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+:root {
+	--color-main: oklch(65.24% 0.099 190.71);
+	--color-secundary: oklch(32.59% 0.052 250.65);
+	--color-black-app: oklch(14.48% 0 0);
+	--color-white-app: oklch(98.46% 0.002 247.84);
+	--border-radius: 0.8rem;
+
+
+	/* paleta de colores */
+
+	--color-main-50:  oklch(0.9640 0.0107 186.37);
+	--color-main-100: oklch(0.8990 0.0414 185.32);
+	--color-main-200: oklch(0.7907 0.0840 186.43);
+	--color-main-300: oklch(0.6645 0.1155 186.79);
+	--color-main-400: oklch(0.5626 0.1184 187.08);
+	--color-main-600: oklch(0.3798 0.0917 188.53);
+	--color-main-700: oklch(0.3142 0.0765 188.33);
+	--color-main-800: oklch(0.2606 0.0634 188.77);
+	--color-main-900: oklch(0.2277 0.0541 189.00);
+	--color-main-950: oklch(0.1204 0.0387 189.91);
+}
+
+@theme {
+	--color-main: oklch(65.24% 0.099 190.71);
+	/* paleta de colores app */
+	--color-main-50:  oklch(0.9640 0.0107 186.37);
+	--color-main-100: oklch(0.8990 0.0414 185.32);
+	--color-main-200: oklch(0.7907 0.0840 186.43);
+	--color-main-300: oklch(0.6645 0.1155 186.79);
+	--color-main-400: oklch(0.5626 0.1184 187.08);
+	--color-main-600: oklch(0.3798 0.0917 188.53);
+	--color-main-700: oklch(0.3142 0.0765 188.33);
+	--color-main-800: oklch(0.2606 0.0634 188.77);
+	--color-main-900: oklch(0.2277 0.0541 189.00);
+	--color-main-950: oklch(0.1204 0.0387 189.91);
+
+	--color-secundary: oklch(32.59% 0.052 250.65);
+	--color-black-app: oklch(14.48% 0 0);
+	--color-white-app: oklch(98.46% 0.002 247.84);
+	--font-kanit: 'Kanit', sans-serif;
+	--text-title: 4rem;
+	--text-subtitle: 3rem;
+	--spacing-app: 120rem;
+}
+
+@layer components {
+	.header__itmes {
+		@apply px-4 py-8 lg:py-4  hover:bg-main rounded-sm cursor-pointer;
+	}
+
+	.boton-contacto {
+		@apply w-[90%] md:max-w-[30rem] flex justify-center gap-4 items-center bg-main cursor-pointer;
+	}
+
+	.title-section {
+		@apply text-lg border px-2 py-1 rounded-full w-fit mx-auto block;
+	}
+
+	.services__button{
+		@apply cursor-pointer underline underline-offset-4 text-3xl
+	}
+
+	/* estilos de la card de los profesionales */
+	.card__info{
+		@apply p-8
+	}
+
+	.card__info__title {
+		@apply  opacity-65
+	}
+	.card__info__name {
+		@apply text-subtitle font-semibold mb-10
+	}
+	.card__info__redes {
+		@apply flex gap-4
+	}
+	.card__profesional {
+		@apply mx-auto bg-white-app
+	}
+
+
+	.title__header {
+		@apply text-6xl
+	}
+}
+
+/* ------------------------------------------------------------------------- configuracion base del aplicativo ------------------------------------------------------------------------- */
+
+*,
+*:before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Kanit';
+	line-height: 1.6;
+	/* background-color: var(--color-white-app); */
+}
+
+html::-webkit-scrollbar {
+	background-color: var(--color-black-app);
+	width: 0.5rem;
+}
+
+html::-webkit-scrollbar-thumb {
+	background: var(--color-main);
+	border-radius: 10rem;
+}

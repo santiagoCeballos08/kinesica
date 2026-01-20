@@ -1,14 +1,26 @@
-import './assets/main.css'
+import './assets/css/base.css';
+import './assets/css/fonts.css';
+import './assets/css/main.css';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import App from './App.vue'
-import router from './router'
+import App from './App.vue';
+import router from './router';
 
-const app = createApp(App)
+// importamos directivas personalizadas
+import fadeScroll from './assets/directives/fadeScroll';
+import showAnimate from './assets/directives/showAnimate';
+import fadeInDirectives from './assets/directives/fadeInDirectives';
 
-app.use(createPinia())
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+// implementamos las directivas
+app.directive('fade-scroll', fadeScroll);
+app.directive('fade-in', fadeInDirectives);
+app.directive('fade-animation-show', showAnimate);
+
+app.use(createPinia());
+app.use(router);
+
+app.mount('#app');

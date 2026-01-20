@@ -1,27 +1,83 @@
 <template>
 	<main class="">
 		<!-- Hero Section -->
-		<section class="relative py-24 bg-gradient-to-r from-main-400 to-main-600 text-white overflow-hidden">
-			<div class="absolute inset-0 pattern-dots"></div>
-			<div class="container mx-auto px-6 text-center relative z-10">
-				<div class="flex justify-center mb-6 animate-fadeInUp">
-					<div class="bg-white/20 backdrop-blur-sm p-6 rounded-full">
-						<svg class="w-50 h-50 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-						</svg>
+		<section
+			class="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+			<!-- Patrón de líneas diagonales estilo gym -->
+			<div class="absolute inset-0 gym-stripes opacity-10"></div>
+			<div class="absolute inset-0 bg-gradient-to-b from-transparent via-main-600/10 to-transparent"></div>
+
+			<!-- Elementos decorativos estilo fitness -->
+			<div
+				class="absolute top-10 left-10 w-32 h-32 border-4 border-main-500/20 rounded-lg rotate-45 animate-pulse-custom">
+			</div>
+			<div
+				class="absolute bottom-20 right-10 w-40 h-40 border-4 border-main-400/20 rounded-lg rotate-12 animate-float">
+			</div>
+			<div class="absolute top-1/2 left-1/4 w-2 h-2 bg-main-500 rounded-full animate-pulse-custom"></div>
+			<div class="absolute top-1/3 right-1/3 w-3 h-3 bg-main-400 rounded-full animate-pulse-custom delay-200">
+			</div>
+
+			<div class="container mx-auto px-6 relative z-10">
+				<div class="max-w-4xl mx-auto">
+					<!-- Badge superior -->
+					<div class="flex justify-center mb-6 animate-fadeInUp">
+						<div
+							class="inline-flex items-center gap-3 bg-main-600/20 backdrop-blur-md border border-main-500/30 px-6 py-3 rounded-full">
+							<svg class="w-6 h-6 text-main-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+							<span class="text-sm font-bold tracking-widest uppercase text-main-300">Energía · Fuerza ·
+								Salud</span>
+						</div>
+					</div>
+
+					<!-- Título principal -->
+					<h1
+						class="text-5xl md:text-7xl font-black mb-6 animate-fadeInUp text-center uppercase tracking-tight">
+						<span class="block text-white drop-shadow-lg">¡Actívate con</span>
+						<span
+							class="block bg-gradient-to-r from-main-400 via-main-500 to-main-600 bg-clip-text text-transparent drop-shadow-2xl">
+							Nosotros!
+						</span>
+					</h1>
+
+					<!-- Subtítulo -->
+					<p
+						class="text-xl md:text-2xl mb-8 animate-fadeInUp delay-200 text-center text-gray-300 font-semibold">
+						<span class="text-main-400">Fisioterapia</span> ·
+						<span class="text-main-300">Rehabilitación</span> ·
+						<span class="text-main-400">Entrenamiento</span>
+					</p>
+
+					<!-- CTA Button -->
+					<div class="flex justify-center gap-4 animate-fadeInUp delay-300 mb-8">
+						<a href="#contacto"
+							class="group relative px-8 py-4 bg-main-600 hover:bg-main-500 rounded-lg font-bold text-3xl uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-main-500/50">
+							<span class="relative z-10">Contáctanos</span>
+							<div
+								class="absolute inset-0 bg-white/20 rounded-lg transform scale-0 group-hover:scale-100 transition-transform duration-300">
+							</div>
+						</a>
+					</div>
+
+					<!-- Stats rápidos -->
+					<div class="grid grid-cols-2 gap-6 max-w-2xl mx-auto animate-fadeInUp delay-400">
+						<div class="text-4xl text-center border-l-2 border-main-500/50">
+							<div class=" text-5xl font-black text-main-400">+5</div>
+							<div class="text-gray-400 uppercase tracking-wider mt-1">Años</div>
+						</div>
+						<div class=" text-4xl text-center border-l-2 border-main-500/50">
+							<div class="text-5xl font-black text-main-400">+500</div>
+							<div class=" text-gray-400 uppercase tracking-wider mt-1">Clientes</div>
+						</div>
+
 					</div>
 				</div>
-				<h1 class=" font-bold mb-6 animate-fadeInUp text-title">
-					Tu salud en movimiento<br>
-					<span class="text-main-100">Recuperación y Bienestar</span>
-				</h1>
-				<p class=" mb-8 animate-fadeInUp delay-200">
-					Centro especializado en fisioterapia, rehabilitación y entrenamiento funcional
-				</p>
-
 			</div>
-			<!-- Decorative shapes -->
+
+			<!-- Decorative shapes bottom -->
 			<div class="absolute bottom-0 left-0 w-full">
 				<svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
@@ -140,10 +196,7 @@
 							Nuestra Ubicación
 						</h3>
 						<div class="map-container shadow-xl">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.058!2d-75.556!3d6.338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjAnMTcuMyJOIDc1wrAzMycyMS42Ilc!5e0!3m2!1ses!2sco!4v1234567890"
-								width="100%" style="border:0; height:40rem;" allowfullscreen="" loading="lazy">
-							</iframe>
+							<div id="map" style="height: 400px; width: 100%; border-radius: 1rem;"></div>
 						</div>
 						<div class="mt-6 p-6 bg-white rounded-lg shadow-md">
 							<p class="text-gray-700 flex items-start mb-4">
@@ -245,7 +298,35 @@
 </template>
 
 <script setup>
-import { PhoneIcon } from '@heroicons/vue/24/outline';
+import { onMounted } from 'vue';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+// Fix para los iconos de Leaflet en Vite
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+	iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+	iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+	shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+});
+
+onMounted(() => {
+	// Coordenadas de Bello, Antioquia, Colombia
+	const belleCoords = [6.3369, -75.5556];
+
+	// Inicializar el mapa
+	const map = L.map('map').setView(belleCoords, 15);
+
+	// Agregar capa de tiles (OpenStreetMap)
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		maxZoom: 19,
+	}).addTo(map);
+
+	// Agregar marcador con popup
+	const marker = L.marker(belleCoords).addTo(map);
+	marker.bindPopup('<b>FisioGym</b><br>Calle 123 #45-67<br>Bello, Antioquia').openPopup();
+});
 </script>
 
 <style scoped>
@@ -392,12 +473,10 @@ import { PhoneIcon } from '@heroicons/vue/24/outline';
 	border-radius: 1rem;
 }
 
-.map-container iframe {
-	transition: transform 0.3s ease;
-}
-
-.map-container:hover iframe {
-	transform: scale(1.05);
+.map-container:hover {
+	box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+	transform: scale(1.02);
+	transition: all 0.3s ease;
 }
 
 .pattern-dots {

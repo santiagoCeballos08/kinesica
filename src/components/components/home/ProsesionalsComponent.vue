@@ -69,7 +69,7 @@ const profesionales = markRaw([
 				<figure class="overflow-hidden ">
 					<img :src="profesional.picture == '' ? 'https://placehold.co/600x600' : profesional.picture"
 						alt="imagen de profesional de kinesica"
-						class="hover:scale-125 transition-all hover:rotate-10 min-h-[78rem]">
+						class="hover:scale-125 transition-all object-cover  hover:rotate-10 h-[40rem] md:h-[78rem] ">
 				</figure>
 				<article class="card__info">
 					<h2 class="card__info__title">{{ profesional.profesion }} </h2>

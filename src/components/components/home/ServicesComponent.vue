@@ -12,20 +12,17 @@ import { FaceSmileIcon } from '@heroicons/vue/24/outline';
 // importamos los datos de los servicios
 import { servicesData } from '@/data/servicesData';
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const horizontalSection = ref(null);
 const scrollContainer = ref(null);
 let ctx = null;
 
-
 onMounted(async () => {
 	await nextTick();
 
-	ctx = gsap.context((self) => {
+	ctx = gsap.context(() => {
 		const panels = gsap.utils.toArray('.contenct__service');
-
 		const getTotalWidth = () => scrollContainer.value.scrollWidth - window.innerWidth;
 
 		// Scroll Horizontal Principal
@@ -39,20 +36,18 @@ onMounted(async () => {
 				start: 'top top',
 				end: () => `+=${getTotalWidth()}`,
 				invalidateOnRefresh: true,
-			}
+			},
 		});
 
 		panels.forEach((panel) => {
 			const imgEl = panel.querySelector('.card__img img');
-			// Importante: seleccionamos el contenedor de la imagen para el trigger del parallax
 			const imgWrapper = panel.querySelector('.card__img');
 			const title = panel.querySelector('.card__info__title');
 			const text = panel.querySelector('p');
 			const sensibilitys = panel.querySelector('.card__info__sensibilitys');
 			const boton = panel.querySelector('.boton-contacto');
-			const elementos = panel.querySelectorAll('.caracteristica')
-			const indicadores = panel.querySelectorAll('.indicador')
-
+			const elementos = panel.querySelectorAll('.caracteristica');
+			const indicadores = panel.querySelectorAll('.indicador');
 
 			if (sensibilitys) {
 				gsap.from(sensibilitys, {
@@ -67,21 +62,21 @@ onMounted(async () => {
 						containerAnimation: scrollTween,
 						start: 'top 90%',
 						toggleActions: 'play none none reverse',
-					}
+					},
 				});
 			}
 
 			// --- Animación de Imagen ---
 			if (imgEl && imgWrapper) {
-				gsap.fromTo(imgEl,
+				gsap.fromTo(
+					imgEl,
 					{
 						scale: 1.4,
 						opacity: 0,
 						filter: 'blur(10px)',
-						rotation: -5
+						rotation: -5,
 					},
 					{
-
 						scale: 1.15,
 						opacity: 1,
 						filter: 'blur(0px)',
@@ -94,15 +89,14 @@ onMounted(async () => {
 							start: 'left 60%',
 							end: 'right 60%',
 							toggleActions: 'play none none reverse',
-							id: 'img-entry'
-						}
-					}
+							id: 'img-entry',
+						},
+					},
 				);
 
-				gsap.fromTo(imgEl,
-					{
-						xPercent: -15
-					},
+				gsap.fromTo(
+					imgEl,
+					{ xPercent: -15 },
 					{
 						xPercent: 15,
 						ease: 'none',
@@ -112,14 +106,14 @@ onMounted(async () => {
 							start: 'left right',
 							end: 'right left',
 							scrub: true,
-						}
-					}
+						},
+					},
 				);
 			}
 
-			// --- Animación de Textos (Sin cambios) ---
+			// --- Animación de Textos ---
 			if (title || text) {
-				gsap.from([title, text], {
+				gsap.from([title, text].filter(Boolean), {
 					y: 50,
 					opacity: 0,
 					autoAlpha: 0,
@@ -131,11 +125,11 @@ onMounted(async () => {
 						containerAnimation: scrollTween,
 						start: 'left 10%',
 						toggleActions: 'play none none reverse',
-					}
+					},
 				});
 			}
 
-			// animacion para el boton
+			// --- Animación del botón ---
 			if (boton) {
 				gsap.from(boton, {
 					y: -50,
@@ -149,87 +143,57 @@ onMounted(async () => {
 						containerAnimation: scrollTween,
 						start: 'left 10%',
 						toggleActions: 'play none none reverse',
-					}
-				})
+					},
+				});
 			}
 
-			// if el tamaño de la pantalla es menos a 768px entonces se habilita el slider
+			// Carrusel de características en móvil
 			if (window.innerWidth <= 768) {
 				let indiceActual = 0;
 				let intervalo;
 
-
 				elementos.forEach((el, i) => {
-					gsap.set(el, {
-						x: i === 0 ? '0%' : '100%'
-					});
+					gsap.set(el, { x: i === 0 ? '0%' : '100%' });
 				});
 
 				function cambiarSlide(nuevoIndice) {
 					if (nuevoIndice === indiceActual) return;
-
-					// Detener intervalo
 					if (intervalo) clearInterval(intervalo);
 
 					const actual = elementos[indiceActual];
 					const siguiente = elementos[nuevoIndice];
 
-					// Actualizar indicadores
 					indicadores[indiceActual].classList.remove('activo');
 					indicadores[nuevoIndice].classList.add('activo');
 
-					// Animación: el siguiente empuja al actual
-					const tl = gsap.timeline({
+					gsap.timeline({
 						onComplete: () => {
-							// Reiniciar posición del slide que salió
 							gsap.set(actual, { x: '100%' });
 							iniciarCarruselAutomatico();
-						}
-					});
-
-					// El actual sale hacia la izquierda
-					tl.to(actual, {
-						x: '-100%',
-						duration: 0.8,
-						ease: 'power2.inOut'
+						},
 					})
-						// El siguiente entra desde la derecha simultáneamente
-						.to(siguiente, {
-							x: '0%',
-							duration: 0.8,
-							ease: 'power2.inOut'
-						}, '<'); // '<' significa "al mismo tiempo que la animación anterior"
+						.to(actual, { x: '-100%', duration: 0.8, ease: 'power2.inOut' })
+						.to(siguiente, { x: '0%', duration: 0.8, ease: 'power2.inOut' }, '<');
 
 					indiceActual = nuevoIndice;
 				}
 
-
-				// Avanzar al siguiente slide
 				function siguienteSlide() {
-					const siguiente = (indiceActual + 1) % elementos.length;
-					cambiarSlide(siguiente);
+					cambiarSlide((indiceActual + 1) % elementos.length);
 				}
 
-				// Iniciar carrusel automático
 				function iniciarCarruselAutomatico() {
 					if (intervalo) clearInterval(intervalo);
 					intervalo = setInterval(siguienteSlide, 4000);
 				}
 
-				// Event listeners para indicadores
 				indicadores.forEach((indicador, index) => {
-					indicador.addEventListener('click', () => {
-						cambiarSlide(index);
-					});
+					indicador.addEventListener('click', () => cambiarSlide(index));
 				});
 
 				iniciarCarruselAutomatico();
-
 			}
-
 		});
-
-
 	}, horizontalSection.value);
 });
 
@@ -242,36 +206,51 @@ onUnmounted(() => {
 	<section ref="horizontalSection" class="relative overflow-hidden mb-4" id="services">
 		<div ref="scrollContainer" class="flex w-max h-screen">
 			<!-- panel de seccion de servicios -->
-			<section class="contenct__service bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white"
-				v-for="service in servicesData" :key="service.id">
+			<section
+				class="contenct__service bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white"
+				v-for="service in servicesData"
+				:key="service.id"
+			>
 				<article
-					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto">
-					<picture class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl  bg-gradient-to-r ">
-						<img :src="service.img" alt="presoterapia"
-							class="object-object w-full h-full aspect-video object-top">
+					class="card__services flex flex-col lg:flex-row items-center gap-10 w-11/12 max-w-[200rem] mx-auto"
+				>
+					<picture
+						class="card__img w-full lg:w-1/2 overflow-hidden rounded-xl bg-gradient-to-r"
+					>
+						<img
+							:src="service.img"
+							alt="presoterapia"
+							class="object-object w-full h-full aspect-video object-top"
+						/>
 					</picture>
 					<div class="card__info w-full lg:w-1/2">
-						<h2 v-html="service.title"
-							class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6">
-
-						</h2>
+						<h2
+							v-html="service.title"
+							class="card__info__title text-6xl text-center lg:text-start lg:text-6xl font-bold mb-6"
+						></h2>
 						<p class="text-2lg lg:text-4xl leading-relaxed text-gray-300 mb-10">
 							{{ service.description }}
 						</p>
 						<article
-							class="card__info__sensibilitys relative lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10 flex flex-col">
-
+							class="card__info__sensibilitys relative lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-8 mb-10 flex flex-col"
+						>
 							<!-- card informacion  -->
-							<div class="caracteristica  flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
-								v-for="(characteristic, index) in service.characteristics" :data-index="index">
-								<component :is="characteristic.icon"
-									class="caracteristica__icon size-12 w-[50px] lg:max-w-[6.5rem]  bg-main/50 p-4 rounded-2xl  h-auto lg:max-h-fit  lg:h-full" />
+							<div
+								class="caracteristica flex items-center backdrop-blur-md bg-white/5 border border-white/30 p-2 lg:p-10 rounded-2xl gap-8"
+								v-for="(characteristic, index) in service.characteristics"
+								:data-index="index"
+							>
+								<component
+									:is="characteristic.icon"
+									class="caracteristica__icon size-12 w-[50px] lg:max-w-[6.5rem] bg-main/50 p-4 rounded-2xl h-auto lg:max-h-fit lg:h-full"
+								/>
 								<div class="caracteristica__description">
-									<h3 class="text-4xl font-semibold">{{ characteristic.title }}</h3>
-									<p class="opacity-80"> {{ characteristic.description }}</p>
+									<h3 class="text-4xl font-semibold">
+										{{ characteristic.title }}
+									</h3>
+									<p class="opacity-80">{{ characteristic.description }}</p>
 								</div>
 							</div>
-
 						</article>
 
 						<div class="indicadores lg:hidden">
@@ -281,21 +260,20 @@ onUnmounted(() => {
 							<div class="indicador"></div>
 						</div>
 
-						<a :href="service.uri"
-							class="boton-contacto p-4 rounded-2xl  border border-transparent  hover:border-main-200 hover:shadow-[0_0_15px_rgba(192,231,225,0.3)]">
+						<a
+							:href="service.uri"
+							class="boton-contacto p-4 rounded-2xl border border-transparent hover:border-main-200 hover:shadow-[0_0_15px_rgba(192,231,225,0.3)]"
+						>
 							Agendar Sesión
 						</a>
 					</div>
 				</article>
 			</section>
-
-
 		</div>
 	</section>
 </template>
 
 <style scoped>
-/* Asegúrate de tener los estilos base de la versión anterior */
 .contenct__service {
 	width: 100vw;
 	height: 100vh;
@@ -303,28 +281,23 @@ onUnmounted(() => {
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
-
 }
 
-
-/* Tus colores personalizados */
 .bg-black-app {
 	background-color: #1a1a1a;
 }
-
 
 .card__info__sensibilitys {
 	max-height: 15rem;
 	height: 12rem;
 	overflow: hidden;
-
 }
 
 .caracteristica__description h3 {
 	text-align: center;
 }
 
-@media (width >=1024px) {
+@media (width >= 1024px) {
 	.card__info__sensibilitys {
 		max-height: none;
 		height: auto;
@@ -334,13 +307,11 @@ onUnmounted(() => {
 		flex: 1 0 25%;
 	}
 
-
 	.caracteristica__description h3 {
 		text-align: initial;
 	}
 }
 
-/* ------------------------------------------------------------------------- indicador de los elementos de caracteristica ------------------------------------------------------------------------- */
 /* Indicadores */
 .indicadores {
 	display: flex;
@@ -364,10 +335,13 @@ onUnmounted(() => {
 	border-radius: 5px;
 }
 
+@media (width >= 1024px) {
+	.indicador {
+		display: none;
+	}
+}
 
-
-@media (width <=768px) {
-
+@media (width <= 768px) {
 	.caracteristica {
 		position: absolute;
 		top: 0;
@@ -382,13 +356,6 @@ onUnmounted(() => {
 		border-radius: 1rem;
 		gap: 2rem;
 		color: white;
-	}
-}
-
-
-@media (width >=1024px) {
-	.indicador {
-		display: none;
 	}
 }
 </style>

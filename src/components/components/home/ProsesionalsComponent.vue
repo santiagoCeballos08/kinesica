@@ -64,8 +64,8 @@ const profesionales = markRaw([
 			<h2 class="text-title font-bold">Profesionales</h2>
 
 		</section>
-		<section class="content__prosionals max-w-app grid grid-cols-1 lg:grid-cols-2 mx-auto  gap-10">
-			<article class="card__profesional " v-for="profesional in profesionales">
+		<section class="content__prosionals max-w-app grid grid-cols-1 lg:grid-cols-2 mx-auto  gap-10 ">
+			<article class="card__profesional shadow-xl " v-for="profesional in profesionales">
 				<figure class="overflow-hidden ">
 					<img :src="profesional.picture == '' ? 'https://placehold.co/600x600' : profesional.picture"
 						alt="imagen de profesional de kinesica"

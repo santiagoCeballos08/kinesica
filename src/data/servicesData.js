@@ -11,10 +11,10 @@ export const servicesData = [
 	{
 		id : 1,
 		title : 'Qué es la <span class="text-main-400">Presoterapia</span>',
-		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
+		description : 'Tecnología de compresión avanzada que estimula el sistema linfático y mejora la circulación. Beneficios estéticos y terapéuticos: recuperación muscular, reducción de líquidos, disminución de inflamaciones.',
 		uri: '',
 		textButton: 'Agendar Sesión',
-		img: '/assets/servicios/masoterapiaModelado.webp',
+		img: '/assets/servicios/presoterapia.webp',
 		characteristics : [
 			{
 				icon : zapIcon,
@@ -41,10 +41,10 @@ export const servicesData = [
 	{
 		id : 2,
 		title : 'Qué es la <span class="text-main-400">Fisioterapia</span>',
-		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
+		description : 'La fisioterapia es una disciplina del área de la salud enfocada en la prevención, tratamiento y recuperación de lesiones y trastornos del movimiento mediante técnicas físicas, sin recurrir principalmente a medicamentos o cirugía',
 		uri: '',
 		textButton: 'Agendar Sesión',
-		img: '/assets/servicios/masoterapiaModelado.webp',
+		img: '/assets/servicios/fisioterapia.webp',
 		characteristics : [
 			{
 				icon : zapIcon,
@@ -71,10 +71,10 @@ export const servicesData = [
 	{
 		id : 3,
 		title : 'Qué es la <span class="text-main-400">masoterapia</span>',
-		description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis temporibus tenetur atque aperiam laboriosam.',
+		description : 'La masoterapia es una técnica terapéutica basada en la aplicación de masajes con fines clínicos, cuyo objetivo es aliviar el dolor, reducir la tensión muscular y mejorar la circulación.',
 		uri: '',
 		textButton: 'Agendar Sesión',
-		img: '/assets/servicios/masoterapiaModelado.webp' ,
+		img: '/assets/servicios/masoterapia.webp' ,
 		characteristics : [
 			{
 				icon : zapIcon,

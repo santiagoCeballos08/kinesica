@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted, ref, nextTick } from 'vue';
+import { onMounted, onUnmounted, ref, nextTick, reactive } from 'vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -11,10 +11,45 @@ gsap.registerPlugin(ScrollTrigger);
 const horizontalSection = ref(null);
 const scrollContainer = ref(null);
 const progressBar = ref(null);
+const isMobile = ref(typeof window !== 'undefined' && window.innerWidth <= 768);
 let ctx = null;
+
+// ─ Slider reactivo por servicio ─
+// Mapea service.id → índice activo de la característica visible
+const activeSlides = reactive({});
+const sliderIntervals = [];
+
+function initSliders() {
+	if (window.innerWidth > 768) return;
+
+	servicesData.forEach((service) => {
+		activeSlides[service.id] = 0;
+
+		const interval = setInterval(() => {
+			activeSlides[service.id] =
+				(activeSlides[service.id] + 1) % service.characteristics.length;
+		}, 3500);
+
+		sliderIntervals.push(interval);
+	});
+}
+
+function goToSlide(serviceId, index) {
+	activeSlides[serviceId] = index;
+	// Reinicia el intervalo de ese servicio al tocar un indicador
+	const pos = servicesData.findIndex((s) => s.id === serviceId);
+	if (pos !== -1) {
+		clearInterval(sliderIntervals[pos]);
+		sliderIntervals[pos] = setInterval(() => {
+			activeSlides[serviceId] =
+				(activeSlides[serviceId] + 1) % servicesData[pos].characteristics.length;
+		}, 3500);
+	}
+}
 
 onMounted(async () => {
 	await nextTick();
+	initSliders();
 
 	ctx = gsap.context(() => {
 		const panels = gsap.utils.toArray('.contenct__service');
@@ -155,8 +190,8 @@ onMounted(async () => {
 				});
 			}
 
-			// --- Características: stagger desde abajo ---
-			if (sensibilitys) {
+			// --- Características: stagger desde abajo (solo desktop) ---
+			if (sensibilitys && window.innerWidth > 768) {
 				// Fijamos estado inicial explícitamente para evitar que GSAP
 				// deje elementos atascados en el estado FROM con scroll horizontal
 				gsap.set(elementos, { y: 45, opacity: 0, visibility: 'hidden' });
@@ -196,57 +231,13 @@ onMounted(async () => {
 				});
 			}
 
-			// Carrusel de características en móvil
-			if (window.innerWidth <= 768) {
-				let indiceActual = 0;
-				let intervalo;
-
-				elementos.forEach((el, i) => {
-					gsap.set(el, { x: i === 0 ? '0%' : '100%' });
-				});
-
-				function cambiarSlide(nuevoIndice) {
-					if (nuevoIndice === indiceActual) return;
-					if (intervalo) clearInterval(intervalo);
-
-					const actual = elementos[indiceActual];
-					const siguiente = elementos[nuevoIndice];
-
-					indicadores[indiceActual].classList.remove('activo');
-					indicadores[nuevoIndice].classList.add('activo');
-
-					gsap.timeline({
-						onComplete: () => {
-							gsap.set(actual, { x: '100%' });
-							iniciarCarruselAutomatico();
-						},
-					})
-						.to(actual, { x: '-100%', duration: 0.7, ease: 'power2.inOut' })
-						.to(siguiente, { x: '0%', duration: 0.7, ease: 'power2.inOut' }, '<');
-
-					indiceActual = nuevoIndice;
-				}
-
-				function siguienteSlide() {
-					cambiarSlide((indiceActual + 1) % elementos.length);
-				}
-
-				function iniciarCarruselAutomatico() {
-					if (intervalo) clearInterval(intervalo);
-					intervalo = setInterval(siguienteSlide, 4000);
-				}
-
-				indicadores.forEach((indicador, index) => {
-					indicador.addEventListener('click', () => cambiarSlide(index));
-				});
-
-				iniciarCarruselAutomatico();
-			}
+			// Carrusel GSAP eliminado — el slider móvil es Vue reactivo (ver template)
 		});
 	}, horizontalSection.value);
 });
 
 onUnmounted(() => {
+	sliderIntervals.forEach(clearInterval);
 	if (ctx) ctx.revert();
 });
 </script>
@@ -282,7 +273,7 @@ onUnmounted(() => {
 					<div class="card__info flex flex-col">
 
 						<!-- Tag de servicio -->
-						<span class="service-tag">Servicio {{ String(idx + 1).padStart(2, '0') }}</span>
+						<!-- <span class="service-tag">Servicio {{ String(idx + 1).padStart(2, '0') }}</span> -->
 
 						<!-- Título con wrapper para reveal -->
 						<div class="title-reveal-wrapper overflow-hidden">
@@ -299,21 +290,44 @@ onUnmounted(() => {
 
 						<!-- Características -->
 						<article class="card__info__sensibilitys relative">
-							<div class="caracteristica flex items-center rounded-2xl"
-								v-for="(characteristic, index) in service.characteristics" :data-index="index">
-								<component :is="characteristic.icon"
-									class="caracteristica__icon flex-shrink-0 rounded-xl" />
-								<div class="caracteristica__description">
-									<h3 class="font-semibold text-white">{{ characteristic.title }}</h3>
-									<p class="opacity-70">{{ characteristic.description }}</p>
+							<!-- Desktop: todas visibles en grid -->
+							<template v-if="!isMobile">
+								<div class="caracteristica flex items-center rounded-2xl"
+									v-for="(characteristic, index) in service.characteristics" :data-index="index">
+									<component :is="characteristic.icon"
+										class="caracteristica__icon flex-shrink-0 rounded-xl" />
+									<div class="caracteristica__description">
+										<h3 class="font-semibold text-white">{{ characteristic.title }}</h3>
+										<p class="opacity-70">{{ characteristic.description }}</p>
+									</div>
 								</div>
-							</div>
+							</template>
+
+							<!-- Mobile: slider reactivo, una card a la vez -->
+							<template v-else>
+								<Transition name="slide-card" mode="out-in">
+									<div :key="activeSlides[service.id]"
+										class="caracteristica flex items-center rounded-2xl">
+										<component :is="service.characteristics[activeSlides[service.id] ?? 0].icon"
+											class="caracteristica__icon flex-shrink-0 rounded-xl" />
+										<div class="caracteristica__description">
+											<h3 class="font-semibold text-white">
+												{{ service.characteristics[activeSlides[service.id] ?? 0].title }}
+											</h3>
+											<p class="opacity-70">
+												{{ service.characteristics[activeSlides[service.id] ?? 0].description }}
+											</p>
+										</div>
+									</div>
+								</Transition>
+							</template>
 						</article>
 
 						<!-- Indicadores móvil -->
 						<div class="indicadores lg:hidden">
-							<div class="indicador" :class="{ activo: i === 0 }"
-								v-for="(_, i) in service.characteristics" :key="i"></div>
+							<div class="indicador" :class="{ activo: (activeSlides[service.id] ?? 0) === i }"
+								v-for="(_, i) in service.characteristics" :key="i" @click="goToSlide(service.id, i)">
+							</div>
 						</div>
 
 						<!-- Botón -->
@@ -555,6 +569,22 @@ onUnmounted(() => {
 	box-shadow: 0 0 10px rgba(192, 231, 225, 0.6);
 }
 
+/* ── Transición slide-card (móvil) ───────── */
+.slide-card-enter-active,
+.slide-card-leave-active {
+	transition: opacity 0.3s ease, transform 0.35s ease;
+}
+
+.slide-card-enter-from {
+	opacity: 0;
+	transform: translateX(30px);
+}
+
+.slide-card-leave-to {
+	opacity: 0;
+	transform: translateX(-30px);
+}
+
 /* ── Indicadores móvil ─────────────────── */
 .indicadores {
 	display: flex;
@@ -711,15 +741,12 @@ onUnmounted(() => {
 	}
 
 	.card__info__sensibilitys {
-		height: 14rem;
-		max-height: 14rem;
+		height: auto;
+		max-height: none;
 		margin-bottom: 0.4rem;
 	}
 
 	.caracteristica {
-		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100%;
 		gap: 1.2rem;
 		padding: 1rem 1.4rem;

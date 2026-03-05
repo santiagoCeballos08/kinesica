@@ -10,18 +10,18 @@
 			<article class="container__info p-10">
 				<h2 class="title__about text-title font-bold mb-10 text-main-700">Quienes somos en Kinesica</h2>
 				<p v-fade-scroll class="info__about text-justify">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, quia
-					incidunt nam nisi, consectetur facilis atque at perspiciatis, repudiandae quas
-					beatae? Dolores laboriosam exercitationem dicta, recusandae ullam incidunt
-					sapiente placeat!
+					KINESICA es una marca creada por Camila Torres Fisioterapeuta con más de 7 años de experiencia.
+					Nuestra propuesta nace desde la necesidad de una atención personalizada con un enfoque humano,
+					empático y altamente profesional, combinando el uso de tecnología que te ayuda a regresar a tu
+					cotidianidad. Transformamos la salud física de nuestros pacientes desde la comprensión, el
+					compromiso y la experiencia, mejorando su calidad de vida y funcionalidad corporal.
 				</p>
 
 				<h3 class="title__about text-title font-bold mb-10 text-main-700">Nuestra experiencia</h3>
 				<p v-fade-scroll class="info__about text-justify">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, quia
-					incidunt nam nisi, consectetur facilis atque at perspiciatis, repudiandae quas
-					beatae? Dolores laboriosam exercitationem dicta, recusandae ullam incidunt
-					sapiente placeat!
+					Son 7 años acompañando los procesos de recuperación física y emocional de muchas personas en
+					diferentes situaciones de su vida, desde el sedentarismo hasta el tratamiento de lesiones musculo
+					esqueléticas. Recuperando así la autonomía en actividades de la vida diari.
 				</p>
 
 				<div class="about__icons mt-20 md:mt-50">

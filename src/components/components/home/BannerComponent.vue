@@ -10,13 +10,13 @@
 
 			<div
 				class="container__banner__info relative flex flex-col items-center justify-center z-20 min-h-[100vh]  text-center p-10">
-				<span class="opacity-75 md:text-4xl text-white ">Kinesica Fisioterapia</span>
+				<span class="opacity-75 md:text-4xl text-white ">Kinesica</span>
 				<h1 class="uppercase text-6xl md:text-[5vw] font-bold mb-10 text-main">
 					cuidamos tu cuerpo <br /> con el <span class="text-main-200"> corazón</span>
 				</h1>
 				<h2 class="mb-20 max-w-[70rem] text-center   lg:text-4xl text-white opacity-50">
-					Recuperación atlética de élite. Maximiza tu rendimiento deportivo con técnicas
-					especializadas en fisioterapia deportiva.
+					Entrenamiento funcional y fisioterapia para quienes buscan mejorar su salud de forma segura y guiada
+					profesionalmente.
 				</h2>
 				<section
 					class="container__button__banner w-full flex flex-col md:flex-row justify-center gap-8 mb-20 items-center">
@@ -25,6 +25,7 @@
 						Saber Más
 						<ArrowLongRightIcon class="size-10 " />
 					</a>
+
 				</section>
 				<router-link :to="{ path: '/', hash: '#services' }">
 					<arrow-down-icon />

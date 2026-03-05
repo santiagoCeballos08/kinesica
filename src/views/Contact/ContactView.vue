@@ -168,7 +168,7 @@
 		<!-- Ubicación y Redes Sociales -->
 		<section class="py-16 bg-gray-50">
 			<div class="container mx-auto px-6">
-				<div class="grid lg:grid-cols-3 gap-12">
+				<div class="grid lg:grid-cols-3 grid-cols-1 gap-y-10  lg:gap-12">
 					<!-- Mapa -->
 					<div class="animate-slideInLeft col-span-2">
 						<h3 class=" font-bold text-gray-800 mb-6 flex items-center">

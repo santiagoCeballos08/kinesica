@@ -1,51 +1,59 @@
 <template>
 	<footer
-		class="content__footer__hero bg-main-800 text-white-app min-h-[30rem] grid lg:grid-cols-4 text-center lg:text-start p-20">
-		<section class="col-span-2">
-			<figure class="w-fit mx-auto mb-4 max-w-96">
+		class="content__footer__hero bg-main-800 text-white-app min-h-[30rem] grid lg:grid-cols-4 text-center lg:text-start p-20 ">
+		<section class="flex justify-center lg:justify-start mb-10 md:mb-0 col-span-2">
+			<figure class=" mb-4 max-w-96">
 				<img src="/assets/img/logos/logo_white.webp" alt="" />
 			</figure>
 
 		</section>
 
-		<article class="content__footer__links col-span-2 flex flex-col lg:flex-row gap-8 justify-around">
-			<section class="footer__links__servicios">
-				<h3 class="font-semibold">Servicios</h3>
-				<ul class="content">
-					<li>Fisioterapia Manual</li>
-					<li>Rehabilitacion Deportiva</li>
-					<li>Electroterapia</li>
-					<li>Masoterapia</li>
-				</ul>
+		<article class="content__footer__links col-span-2 flex flex-col lg:flex-row gap-8 justify-end">
+
+			<section class="flex gap-4 justify-between text-start">
+				<section class="footer__links__servicios">
+					<h3 class="font-semibold">Nuestros Servicios</h3>
+					<ul class="content">
+						<li>Entrenamiento Funcional</li>
+						<li>Fisioterapia</li>
+						<li>Presoterapia</li>
+						<li>Masoterapia</li>
+					</ul>
+				</section>
+
+
+				<section class="footer__links__enlaces">
+					<h3 class="font-semibold">Enlaces</h3>
+					<ul class="content">
+						<li>
+							<router-link class="hover:underline underline-offset-4"
+								:to="{ path: '/', hash: '#inicio' }">Inicio</router-link>
+						</li>
+						<li>
+							<router-link class="hover:underline underline-offset-4"
+								:to="{ path: '/', hash: '#services' }">Servicios</router-link>
+						</li>
+						<li>
+							<router-link class="hover:underline underline-offset-4"
+								:to="{ path: '/', hash: '#profesionales' }">Profesionales</router-link>
+						</li>
+						<li>
+							<router-link class="hover:underline underline-offset-4"
+								:to="{ path: '/', hash: '#precios' }">Planes</router-link>
+						</li>
+						<li>
+							<router-link class="hover:underline underline-offset-4"
+								:to="{ path: '/contacto', hash: '' }">Contacto</router-link>
+						</li>
+					</ul>
+				</section>
 			</section>
-			<section class="footer__links__enlaces">
-				<h3 class="font-semibold">Enlaces</h3>
-				<ul class="content">
-					<li>
-						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '#inicio' }">Inicio</router-link>
-					</li>
-					<li>
-						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '#services' }">Servicios</router-link>
-					</li>
-					<li>
-						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '#profesionales' }">Profesionales</router-link>
-					</li>
-					<li>
-						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/', hash: '#precios' }">Planes</router-link>
-					</li>
-					<li>
-						<router-link class="hover:underline underline-offset-4"
-							:to="{ path: '/contacto', hash: '' }">Contacto</router-link>
-					</li>
-				</ul>
-			</section>
+
+
+
 			<section class="footer__links__contacto">
-				<h3 class="font-semibold mb-4">Contacto</h3>
-				<ul class="content flex flex-col items-center gap-4">
+				<h3 class="font-semibold mb-4 capitalize">Siguenos en nuestras redes</h3>
+				<ul class="content flex flex-row justify-center  items-center gap-4">
 					<li><a href=""><instagram-icon class="size-20" color="#fff" /></a></li>
 					<li><a href="https://www.tiktok.com/@kinesica5?lang=es" target="_blank"><tiktok-icon
 								class="size-20" /></a></li>

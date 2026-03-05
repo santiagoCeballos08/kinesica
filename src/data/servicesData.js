@@ -132,12 +132,12 @@ export const servicesData = [
 			{
 				icon : SpaIcon,
 				title : 'Activación Circular',
-				description : 'Activacion de la circulacion sanguinea'
+				description : 'Activación de la circulacion sanguinea'
 			},
 			{
 				icon : BodyIcon,
-				title : 'Estimulacion 4',
-				description : 'Activacion de la circulacion sanguinea'
+				title : 'Activación',
+				description : 'Activación de la circulacion sanguinea'
 			},
 		]
 	}

@@ -5,21 +5,21 @@
 			increibles precios
 		</h2>
 		<section class="container__princings__titles ">
-			<section class="princings__services mt-10 mb-40 p-5 flex flex-wrap w-full justify-center gap-10">
-				<button class="services__button button" @click="princingsInfo('terapiaManual')">
+			<section class="princings__services mt-10 mb-40 p-5 flex flex-wrap w-full justify-center gap-20 bg-main-600 max-w-fit mx-auto text-white-app rounded-2xl">
+				<button class="services__button button hover:text-2xl transition-all duration-150" @click="princingsInfo('terapiaManual')">
 					<span>Terapia manual</span>
 				</button>
-				<button class="services__button button" @click="princingsInfo('fisioterapia')">
+				<button class="services__button button hover:text-2xl transition-all duration-150" @click="princingsInfo('fisioterapia')">
 					<span>Fisioterapia General</span>
 				</button>
-				<button class="services__button button" @click="princingsInfo('entrenamiento')">
+				<button class="services__button button hover:text-2xl transition-all duration-150" @click="princingsInfo('entrenamiento')">
 					<span>Entramiento</span>
 				</button>
 			</section>
 		</section>
 
 		<!-- precios de proyectos -->
-		<section class="container__princins__cards__hero">
+		<section class="container__princins__cards__hero" v-fade-in>
 			<section
 				class="container__princins__cards flex flex-col lg:flex-row gap-8 items-center lg:justify-center max-w-app mx-auto">
 

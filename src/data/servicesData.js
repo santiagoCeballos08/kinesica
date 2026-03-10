@@ -23,7 +23,7 @@ export const servicesData = [
 						<br> 35 min de entrenamiento mediante diferentes tipos de ejercicios los cuales se realizan por estaciones o bases.
 						<br>
 						10 min de vuelta a la calma y flexibilidad.`,
-		uri: '',
+		uri: 'https://wa.link/prxrs5',
 		textButton: 'Agendar Sesión',
 		img: '/assets/servicios/entrenamientoFuncional.webp',
 		characteristics : [
@@ -53,7 +53,7 @@ export const servicesData = [
 		id : 3,
 		title : 'Qué es la <span class="text-main-400">Fisioterapia</span>',
 		description : 'Es un proceso de acompañamiento y recuperación que ayuda a aliviar el dolor, recuperar el movimiento y volver a realizar las actividades de la vida diaria con mayor seguridad y confianza. Es un espacio donde un profesional evalúa tu condición física, diseña un plan personalizado y te guía paso a paso para mejorar tu calidad de vida.',
-		uri: '',
+		uri: 'https://wa.link/prxrs5',
 		textButton: 'Agendar Sesión',
 		img: '/assets/servicios/fisioterapia.webp',
 		characteristics : [
@@ -84,7 +84,7 @@ export const servicesData = [
 		id : 2,
 		title : 'Qué es la <span class="text-main-400">Presoterapia</span>',
 		description : 'Tecnología de compresión avanzada que estimula el sistema linfático y mejora la circulación. Beneficios estéticos y terapéuticos: recuperación muscular, reducción de líquidos, disminución de inflamaciones.',
-		uri: '',
+		uri: 'https://wa.link/prxrs5',
 		textButton: 'Agendar Sesión',
 		img: '/assets/servicios/presoterapia.webp',
 		characteristics : [
@@ -115,7 +115,7 @@ export const servicesData = [
 		id : 4,
 		title : 'Qué es la <span class="text-main-400">masoterapia</span>',
 		description : ' La masoterapia es el uso terapéutico de diferentes técnicas de masaje para mejorar la circulación, como el masaje descontracturante con ventosas, masaje deportivo y drenaje linfático con el fin de disminuir el dolor, relajar la musculatura y favorecer el bienestar físico y emocional.',
-		uri: '',
+		uri: 'https://wa.link/prxrs5',
 		textButton: 'Agendar Sesión',
 		img: '/assets/servicios/masoterapia.webp' ,
 		characteristics : [

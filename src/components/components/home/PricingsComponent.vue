@@ -6,14 +6,14 @@
 		</h2>
 		<section class="container__princings__titles ">
 			<section class="princings__services mt-10 mb-40 p-5 flex flex-wrap w-full justify-center gap-10">
-				<button class="services__button button" @click="princingsInfo('profesional')">
-					<span> Entrenamiento Profesional</span>
+				<button class="services__button button" @click="princingsInfo('terapiaManual')">
+					<span>Terapia manual</span>
 				</button>
 				<button class="services__button button" @click="princingsInfo('fisioterapia')">
 					<span>Fisioterapia General</span>
 				</button>
-				<button class="services__button button" @click="princingsInfo('masoterapia')">
-					<span>masoterapia</span>
+				<button class="services__button button" @click="princingsInfo('entrenamiento')">
+					<span>Entramiento</span>
 				</button>
 			</section>
 		</section>
@@ -25,7 +25,7 @@
 
 				<!-- CARD DE PRECIOS -->
 				<div v-for="value in datosPrincipales" :key="value.namePlan"
-					class="card-pricings hover:scale-102 transition-all  max-w-[35rem] h-[60rem] bg-linear-45 from-main-50 via-main-50 to-main shadow-md  rounded-4xl p-4"
+					class="card-pricings hover:scale-102 transition-all  max-w-[40rem] min-h-[60rem] bg-linear-45 from-main-50 via-main-50 to-main shadow-md  rounded-4xl p-4"
 					data-services="">
 					<div class="card__info flex flex-col h-full ">
 						<h1 class="text-3xl font-black text-center text-main-600 mt-8">{{ value.namePlan }}</h1>
@@ -45,7 +45,7 @@
 							</ul>
 
 							<div class="card__info__footer flex justify-center">
-								<a href="#" class="botton__link flex gap-2">Obtener plan
+								<a :href="value.linkPlan" class="botton__link flex gap-2">Obtener plan
 									<ArrowUpRightIcon class="h-8 w-8" />
 								</a>
 							</div>
@@ -71,8 +71,8 @@ const princingsEntrenamientos = ref([
 	{
 		namePlan: 'Plan Full',
 		pricing: '220.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía profesional personalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
@@ -91,8 +91,8 @@ const princingsEntrenamientos = ref([
 	{
 		namePlan: 'Entrenamiento Pro',
 		pricing: '200.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		describePlan: 'Entrena de lunes a viernes con la guía de nuestros profesionales. Un plan diseñado para quienes buscan resultados reales con constancia y dedicación. Grupos reducidos para garantizar atención personalizada y maximizar tu rendimiento.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
@@ -111,8 +111,8 @@ const princingsEntrenamientos = ref([
 	{
 		namePlan: 'Entrenamiento Light',
 		pricing: '155.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		describePlan: 'Entrena a tu ritmo con 3 sesiones semanales guiadas por profesionales. Ideal para quienes inician su camino fitness o buscan mantenerse activos sin sobreexigirse. Resultados reales con grupos reducidos y atención personalizada.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
@@ -134,8 +134,8 @@ const pricingsFisio = ref([
 	{
 		namePlan: 'Plan basico',
 		pricing: '500.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		describePlan: 'Recupera tu movilidad y bienestar con sesiones de fisioterapia personalizadas. Nuestros profesionales utilizan técnicas avanzadas para aliviar el dolor, mejorar tu flexibilidad y acelerar tu recuperación. Tratamiento integral diseñado para tu salud y desempeño físico óptimo.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
@@ -154,8 +154,8 @@ const pricingsFisio = ref([
 	{
 		namePlan: 'plan plus',
 		pricing: '880.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		describePlan: 'Maximiza tu recuperación con 20 sesiones de fisioterapia intensiva. Nuestros especialistas aplican técnicas avanzadas para resultados visibles. Plan diseñado para quienes buscan transformación completa de su movilidad y bienestar físico.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
@@ -174,8 +174,8 @@ const pricingsFisio = ref([
 	{
 		namePlan: 'Plan pro',
 		pricing: '750.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		describePlan: 'Transforma tu recuperación con 15 sesiones de fisioterapia especializada. Nuestros expertos combinan técnicas innovadoras para maximizar tu rendimiento y acelerar resultados. El equilibrio perfecto entre intensidad y efectividad para quienes buscan resultados reales sin comprometer su bienestar.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
@@ -195,74 +195,64 @@ const pricingsFisio = ref([
 
 const pricingsPresoterapia = ref([
 	{
-		namePlan: 'Plan basico',
-		pricing: '300.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		namePlan: 'Terapia Manual',
+		pricing: '90.000',
+		describePlan: 'Potencia tu bienestar con sesiones personalizadas de drenaje linfático y presoterapia. Reduce la retención de líquidos, mejora la circulación y recupera la ligereza en tus piernas. Tratamiento profesional diseñado para tu salud y confort.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: '1 Sesión'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
-			},
-			{
-				icon: XCircleIcon,
-				text: 'Mansajes'
+				text: 'Drenaje Linfático Manual'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: 'Presoterapia'
 			},
 		]
 	},
 	{
-		namePlan: 'Plan Premium',
-		pricing: '300.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		namePlan: 'Terapia Manual Full',
+		pricing: '405.000',
+		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce retención de líquidos, mejora circulación y recupera bienestar integral con sesiones profesionales diseñadas para ti.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: '5 sesione'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: 'Drenaje Linfático Manual'
 			},
-			{
-				icon: XCircleIcon,
-				text: 'Mansajes'
-			},
+
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: 'Presoterapia'
 			},
 		]
 	},
 	{
-		namePlan: 'plan basico',
-		pricing: '300.000',
-		describePlan: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab natus mollitia vero, non voluptatem autem unde voluptas et aperiam?',
-		linkPlan: 'google.com',
+		namePlan: 'Terapia Manual Relax',
+		pricing: '80.000',
+		describePlan:'Relájate con nuestro masaje descontracturante profesional. Libera la tensión muscular, reduce el estrés y recupera la flexibilidad con técnicas combinadas de masaje y ventosas. Sesión ideal para alivio inmediato y bienestar duradero.',
+		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: '1 Sesión'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: 'Mensaje Descontracturante'
 			},
-			{
-				icon: XCircleIcon,
-				text: 'Mansajes'
-			},
+
 			{
 				icon: CheckCircleIcon,
-				text: 'Mansajes'
+				text: 'Con ventosas'
 			},
 		]
 	},
@@ -274,7 +264,7 @@ const datosPrincipales = ref(pricingsFisio.value)
 // seleccionamos los precios segun
 const princingsInfo = (e) => {
 
-	if (e === 'profesional') {
+	if (e === 'terapiaManual') {
 		datosPrincipales.value = pricingsPresoterapia.value
 		return;
 	}
@@ -282,7 +272,7 @@ const princingsInfo = (e) => {
 		datosPrincipales.value = pricingsFisio.value
 		return;
 	}
-	if (e === 'masoterapia') {
+	if (e === 'entrenamiento') {
 		datosPrincipales.value = princingsEntrenamientos.value
 		return;
 	}

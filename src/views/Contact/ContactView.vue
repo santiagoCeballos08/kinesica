@@ -104,9 +104,9 @@
 						</div>
 						<h3 class=" font-semibold mb-2 text-center">Teléfono</h3>
 						<p class="text-gray-600 mb-3 text-center ">Llámanos directamente</p>
-						<a href="tel:+573197846786"
-							class="text-main-700 font-semibold hover:text-main-900 break-all block text-center">+57 319
-							784 67 86</a>
+						<a href="tel:+573137283482"
+							class="text-main-700 font-semibold hover:text-main-900 break-all block text-center">+57 313
+							7283482</a>
 					</div>
 
 					<!-- Email -->
@@ -118,8 +118,8 @@
 						</div>
 						<h3 class=" font-semibold mb-2 text-center">Email</h3>
 						<p class="text-gray-600 mb-3 text-center ">Escríbenos</p>
-						<a href="mailto:info@fisiogym.com"
-							class="text-main-700 font-semibold hover:text-main-900 break-all  block text-center">info@fisiogym.com</a>
+						<a href="mailto:fisotrainingym@gmail.com"
+							class="text-main-700 font-semibold hover:text-main-900 break-all  block text-center">fisotrainingym@gmail.com</a>
 					</div>
 
 					<!-- WhatsApp -->
@@ -134,7 +134,7 @@
 						</div>
 						<h3 class=" font-semibold mb-2 text-center">WhatsApp</h3>
 						<p class="text-gray-600 mb-3 text-center ">Chat directo</p>
-						<a href="https://wa.me/573197846786"
+						<a href="https://wa.link/prxrs5"
 							class="text-green-700 font-semibold hover:text-green-900 block text-center">Enviar
 							mensaje</a>
 					</div>
@@ -153,11 +153,11 @@
 						<div class="space-y-2 text-center">
 							<p class="flex items-center justify-center">
 								<Clock4 class="w-4 h-4 mr-2" />
-								Lun - Vie: 7:00 - 19:00
+								Lun - Vie: 6:00 - 18:00
 							</p>
 							<p class="flex items-center justify-center">
 
-								Sáb: 8:00 - 14:00
+								Sáb: 9:00 - 18:00
 							</p>
 						</div>
 					</div>

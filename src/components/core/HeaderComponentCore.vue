@@ -23,8 +23,9 @@
 					>
 				</li>
 				<li class="header__itmes capitalize text-main-700">
-					<router-link :to="{ path: '/', hash: '#quienesSomos' }" @click="closeMenu"
-						>Quienes somos</router-link
+					<router-link :to="{ path: '/', hash: '#quienesSomos' }" @click="closeMenu">
+						Quiénes somos
+					</router-link
 					>
 				</li>
 				<li class="header__itmes capitalize text-main-700">

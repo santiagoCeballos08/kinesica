@@ -207,7 +207,7 @@
 
 							<div class="space-y-4">
 								<!-- Facebook -->
-								<a href="https://www.facebook.com/profile.php?id=61577351925960&mibextid=wwXIfr&rdid=yGEHM6adFEGRXoy3&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AzYL2EWBK%2F%3Fmibextid%3DwwXIfr#"
+								<a href="https://www.facebook.com/profile.php?id=61577351925960"
 									class="flex items-center p-4 bg-main-50 rounded-lg hover:bg-main-100 transition group">
 									<div
 										class="bg-main-600 w-12 h-12 rounded-full flex items-center justify-center social-icon">
@@ -243,7 +243,7 @@
 
 
 								<!-- TikTok -->
-								<a href="https://tiktok.com"
+								<a href="https://www.tiktok.com/@kinesica5"
 									class="flex items-center p-4 bg-main-50 rounded-lg hover:bg-main-100 transition group">
 									<div
 										class="bg-gray-900 w-12 h-12 rounded-full flex items-center justify-center social-icon">

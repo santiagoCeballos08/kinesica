@@ -29,22 +29,22 @@ export const servicesData = [
 		characteristics : [
 			{
 				icon : Dumbbell,
-				title : 'Tonificacion',
-				description : 'Ayuda a bajar de peso y tonificar'
+				title : 'Tonificación',
+				description : 'Ayuda a bajar de peso y tonificar.'
 			},
 			{
 				icon : ActivityIcon,
 				title : 'Reduccion de estrés',
-				description : 'Reducción de stres y ansiedad'
+				description : 'Reducción de estrés y ansiedad'
 			},
 			{
 				icon : BicepsFlexed,
-				title : 'Mejoramiento de energia',
+				title : 'Mejoramiento de energía',
 				description : 'Aumento de energía y resistencia'
 			},
 			{
 				icon : Users,
-				title : 'Campañamiento',
+				title : 'Campañamiento de Sessión',
 				description : 'Acompañamiento en todas las sesiones'
 			},
 		]
@@ -114,20 +114,20 @@ export const servicesData = [
 	{
 		id : 4,
 		title : 'Qué es la <span class="text-main-400">masoterapia</span>',
-		description : ' La masoterapia es el uso terapéutico de diferentes técnicas de masaje para mejorar la circulación, como el masaje descontracturante con ventosas, masaje deportivo y drenaje linfático con el fin de disminuir el dolor, relajar la musculatura y favorecer el bienestar físico y emocional.',
+		description : 'La masoterapia es el uso terapéutico de diferentes técnicas de masaje para mejorar la circulación, como el masaje descontracturante con ventosas, masaje deportivo y drenaje linfático, con el fin de disminuir el dolor, relajar la musculatura y favorecer el bienestar físico y emocional.',
 		uri: 'https://wa.link/prxrs5',
 		textButton: 'Agendar Sesión',
 		img: '/assets/servicios/masoterapia.webp' ,
 		characteristics : [
 			{
 				icon : BicepsFlexed,
-				title : 'Disminución',
+				title : 'Disminución de Sobrecarga',
 				description : 'Disminución de sobrecarga muscular'
 			},
 			{
 				icon : RelaxIcon,
-				title : 'Reduce',
-				description : 'Reduce el stres y la ansiedad'
+				title : 'Reduce la ansiedad',
+				description : 'Reduce el estrés y la ansiedad.'
 			},
 			{
 				icon : SpaIcon,
@@ -136,8 +136,8 @@ export const servicesData = [
 			},
 			{
 				icon : BodyIcon,
-				title : 'Activación',
-				description : 'Activación de la circulacion sanguinea'
+				title : 'Disminución de gatillos',
+				description : 'Disminución de puntos gatillo'
 			},
 		]
 	}

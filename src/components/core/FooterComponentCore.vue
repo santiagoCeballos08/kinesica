@@ -53,11 +53,10 @@
 
 			<section class="footer__links__contacto">
 				<h3 class="font-semibold mb-4 capitalize">Siguenos en nuestras redes</h3>
-				<ul class="content flex flex-row justify-center  items-center gap-4">
-					<li><a href=""><instagram-icon class="size-20" color="#fff" /></a></li>
-					<li><a href="https://www.tiktok.com/@kinesica5?lang=es" target="_blank"><tiktok-icon
-								class="size-20" /></a></li>
-					<li></li>
+				<ul class="content flex flex-row justify-center  items-start gap-4">
+					<li><a href="https://www.instagram.com/kinesica.fisioterapia"><instagram-icon class="size-20" color="#fff" /></a></li>
+					<li><a href="https://www.facebook.com/profile.php?id=61577351925960"><facebook-icon class="size-20" color="#fff" /></a></li>
+					<li><a href="https://www.facebook.com/profile.php?id=61577351925960"><tiktok-icon class="size-20" color="#fff" /></a></li>
 				</ul>
 			</section>
 		</article>
@@ -75,6 +74,7 @@
 // icono de redes sociales
 import InstagramIcon from '@/assets/icons/InstagramIcon.vue';
 import TiktokIcon from '@/assets/icons/tiktokIcon.vue';
+import FacebookIcon from '@/assets/icons/FacebookIcon.vue';
 
 
 import { format } from '@formkit/tempo';

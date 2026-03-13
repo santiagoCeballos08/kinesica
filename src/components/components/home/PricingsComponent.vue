@@ -1,8 +1,8 @@
 <template>
 	<section class=" container__princings__hero mt-40 bg-white-app p-4" id="precios">
 		<span class="title-section mb-10">nuestros precios</span>
-		<h2 class="text-title font-bold border-dotted border-main-300 border-b-2 text-center text-main-700">Nuestros
-			increibles precios
+		<h2 class="text-title font-bold border-dotted border-main-300 border-b-2 text-center text-main-700">
+			Nuestros increíbles precios
 		</h2>
 		<section class="container__princings__titles ">
 			<section class="princings__services mt-10 mb-40">
@@ -88,7 +88,7 @@ const princingsEntrenamientos = ref([
 	{
 		namePlan: 'Plan Full',
 		pricing: '220.000',
-		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía profesional personalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
+		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía semiprofesional personalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -108,7 +108,7 @@ const princingsEntrenamientos = ref([
 	{
 		namePlan: 'Entrenamiento Pro',
 		pricing: '200.000',
-		describePlan: 'Entrena de lunes a viernes con la guía de nuestros profesionales. Un plan diseñado para quienes buscan resultados reales con constancia y dedicación. Grupos reducidos para garantizar atención personalizada y maximizar tu rendimiento.',
+		describePlan: 'Entrena de lunes a viernes con la guía de nuestros profesionales. Un plan diseñado para quienes buscan resultados reales con constancia y dedicación. Grupos reducidos para garantizar atención semipersonalizada y maximizar tu rendimiento.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -227,6 +227,10 @@ const pricingsPresoterapia = ref([
 			},
 			{
 				icon: CheckCircleIcon,
+				text: 'Mensaje descontracturante'
+			},
+			{
+				icon: CheckCircleIcon,
 				text: 'Presoterapia'
 			},
 		]
@@ -234,42 +238,21 @@ const pricingsPresoterapia = ref([
 	{
 		namePlan: 'Terapia Manual Full',
 		pricing: '405.000',
-		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce retención de líquidos, mejora circulación y recupera bienestar integral con sesiones profesionales diseñadas para ti.',
+		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce la retención de líquidos, mejora la circulación y recupera el bienestar integral con sesiones semiprofesionales diseñadas para ti.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: '5 sesione'
+				text: '5 sesiones'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Drenaje Linfático Manual'
+				text: 'Drenaje linfático manual'
 			},
 
 			{
 				icon: CheckCircleIcon,
 				text: 'Presoterapia'
-			},
-		]
-	},
-	{
-		namePlan: 'Terapia Manual Relax',
-		pricing: '80.000',
-		describePlan:'Relájate con nuestro masaje descontracturante profesional. Libera la tensión muscular, reduce el estrés y recupera la flexibilidad con técnicas combinadas de masaje y ventosas. Sesión ideal para alivio inmediato y bienestar duradero.',
-		linkPlan: 'https://wa.link/prxrs5',
-		beneficios: [
-			{
-				icon: CheckCircleIcon,
-				text: '1 Sesión'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Mensaje Descontracturante'
-			},
-
-			{
-				icon: CheckCircleIcon,
-				text: 'Con ventosas'
 			},
 		]
 	},

@@ -54,9 +54,11 @@
 			<section class="footer__links__contacto">
 				<h3 class="font-semibold mb-4 capitalize">Siguenos en nuestras redes</h3>
 				<ul class="content flex flex-row justify-center  items-start gap-4">
-					<li><a href="https://www.instagram.com/kinesica.fisioterapia"><instagram-icon class="size-20" color="#fff" /></a></li>
-					<li><a href="https://www.facebook.com/profile.php?id=61577351925960"><facebook-icon class="size-20" color="#fff" /></a></li>
-					<li><a href="https://www.facebook.com/profile.php?id=61577351925960"><tiktok-icon class="size-20" color="#fff" /></a></li>
+					<li><a name="red social de instagram" href="https://www.instagram.com/kinesica.fisioterapia"><instagram-icon class="size-20" color="#fff" /></a></li>
+					<li><a name="red social de facebook"
+						 href="https://www.facebook.com/profile.php?id=61577351925960"><facebook-icon class="size-20" color="#fff" /></a></li>
+					<li><a name="red social de tiktok"
+						 href="https://www.tiktok.com/@kinesica5"><tiktok-icon class="size-20" color="#fff" /></a></li>
 				</ul>
 			</section>
 		</article>

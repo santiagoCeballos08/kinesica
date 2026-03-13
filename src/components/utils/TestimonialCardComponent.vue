@@ -1,6 +1,6 @@
 <template>
-	<div class="flex-shrink-0 lg:w-[40rem] w-[22rem] mx-4">
-		<div
+	<article class="flex-shrink-0 lg:w-[40rem] w-[22rem] mx-4">
+		<section
 			class="bg-white rounded-xl shadow-lg p-6 h-full hover:shadow-xl transition-shadow duration-300 border border-gray-100">
 			<!-- Quote Icon and Rating -->
 			<div class="flex justify-between items-start mb-4">
@@ -26,12 +26,12 @@
 					{{ testimonial.image }}
 				</div>
 				<div>
-					<h4 class="font-bold text-gray-900">{{ testimonial.name }}</h4>
+					<h1 class="font-bold text-gray-900">{{ testimonial.name }}</h1>
 					<p class="text-sm text-gray-500">{{ testimonial.role }}</p>
 				</div>
 			</div>
-		</div>
-	</div>
+		</section>
+	</article>
 </template>
 
 <script setup>

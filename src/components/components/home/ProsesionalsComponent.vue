@@ -60,7 +60,7 @@ const profesionales = markRaw([
 <template>
 	<section class="content__profesionals__hero bg-main-50 p-10" id="profesionales">
 		<section class="content_title max-w-app mx-auto p-10">
-			<h2 class="text-4xl font-semibold bg-main text-white-app w-fit p-4">Equipo de trabajo</h2>
+			<h2 class="text-4xl font-semibold bg-main-600 text-white-app w-fit p-4">Equipo de trabajo</h2>
 			<h2 class="text-title font-bold">Profesionales</h2>
 
 		</section>

@@ -13,7 +13,7 @@
 			</div>
 
 			<!-- Marquee Container -->
-			<div class="relative">
+			<section class="relative">
 				<!-- Gradient Overlays -->
 				<div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10">
 				</div>
@@ -32,7 +32,7 @@
 						v-for="(testimonial, index) in [...testimonialsReversed, ...testimonialsReversed]"
 						:key="`row2-${index}`" :testimonial="testimonial" />
 				</div>
-			</div>
+			</section>
 		</div>
 	</section>
 </template>

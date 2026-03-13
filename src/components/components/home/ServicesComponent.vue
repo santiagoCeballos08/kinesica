@@ -78,6 +78,9 @@ onMounted(async () => {
 				const text = panel.querySelector('.card__desc');
 				const sensibilitys = panel.querySelector('.card__info__sensibilitys');
 				const boton = panel.querySelector('.boton-contacto');
+				const buttomViewMore = panel.querySelector('.btn-ver-mas')
+
+
 
 				// Entrada del panel completo desde un lado
 				gsap.from(panel, {
@@ -132,6 +135,22 @@ onMounted(async () => {
 				// Descripción
 				if (text) {
 					gsap.from(text, {
+						y: 20,
+						opacity: 0,
+						duration: 0.7,
+						delay: 0.1,
+						ease: 'power3.out',
+						scrollTrigger: {
+							trigger: panel,
+							start: 'top 78%',
+							toggleActions: 'play none none reverse',
+						},
+					});
+				}
+
+
+				if (buttomViewMore) {
+					gsap.from(buttomViewMore, {
 						y: 20,
 						opacity: 0,
 						duration: 0.7,
@@ -222,6 +241,7 @@ onMounted(async () => {
 			const inidicators = panel.querySelectorAll('.indicador');
 			const numBg = panel.querySelector('.panel-number-bg');
 			const divider = panel.querySelector('.title-divider');
+			const buttomViewMore = panel.querySelector('.btn-ver-mas')
 
 			// --- Número de fondo ---
 			if (numBg) {
@@ -310,6 +330,24 @@ onMounted(async () => {
 			// --- Descripción ---
 			if (text) {
 				gsap.from(text, {
+					y: 30,
+					opacity: 0,
+					autoAlpha: 0,
+					duration: 0.8,
+					delay: 0.15,
+					ease: 'power3.out',
+					scrollTrigger: {
+						trigger: panel,
+						containerAnimation: scrollTween,
+						start: 'left 65%',
+						toggleActions: 'play none none reverse',
+					},
+				});
+			}
+
+			// boton ver mas
+			if (buttomViewMore) {
+				gsap.from(buttomViewMore, {
 					y: 30,
 					opacity: 0,
 					autoAlpha: 0,

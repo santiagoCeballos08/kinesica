@@ -100,12 +100,12 @@ export const servicesData = [
 			},
 			{
 				icon : ClockIcon,
-				title : 'Recuperacion',
+				title : 'Recuperación',
 				description : 'Recuperación post entrenamiento'
 			},
 			{
 				icon : EdemaIcon,
-				title : 'Disminución',
+				title : 'Disminución de edema',
 				description : 'Disminución de edema y retención de líquidos'
 			},
 		]

@@ -5,23 +5,39 @@
 			increibles precios
 		</h2>
 		<section class="container__princings__titles ">
-			<section class="princings__services mt-10 mb-40 p-5 flex flex-wrap w-full justify-center gap-20 bg-main-600 max-w-fit mx-auto text-white-app rounded-2xl">
-				<button class="services__button button hover:text-2xl transition-all duration-150" @click="princingsInfo('terapiaManual')">
+			<section class="princings__services mt-10 mb-40">
+				<button
+					class="services__button"
+					:class="{ active: activeTab === 'terapiaManual' }"
+					@click="princingsInfo('terapiaManual')">
+					<span class="tab__icon">
+						<Hand />
+					</span>
 					<span>Terapia manual</span>
 				</button>
-				<button class="services__button button hover:text-2xl transition-all duration-150" @click="princingsInfo('fisioterapia')">
+				<button
+					class="services__button"
+					:class="{ active: activeTab === 'fisioterapia' }"
+					@click="princingsInfo('fisioterapia')">
+					<span class="tab__icon"><Bone/></span>
 					<span>Fisioterapia General</span>
 				</button>
-				<button class="services__button button hover:text-2xl transition-all duration-150" @click="princingsInfo('entrenamiento')">
-					<span>Entramiento</span>
+				<button
+					class="services__button"
+					:class="{ active: activeTab === 'entrenamiento' }"
+					@click="princingsInfo('entrenamiento')">
+					<span class="tab__icon">
+						<BicepsFlexed />
+					</span>
+					<span>Entrenamiento</span>
 				</button>
 			</section>
 		</section>
 
 		<!-- precios de proyectos -->
-		<section class="container__princins__cards__hero" v-fade-in>
+		<section class="container__princins__cards__hero " v-fade-in>
 			<section
-				class="container__princins__cards flex flex-col lg:flex-row gap-8 items-center lg:justify-center max-w-app mx-auto">
+				class="container__princins__cards min-h-[70vh] flex flex-col lg:flex-row gap-8 items-center lg:justify-center max-w-app mx-auto">
 
 				<!-- CARD DE PRECIOS -->
 				<div v-for="value in datosPrincipales" :key="value.namePlan"
@@ -65,6 +81,7 @@ import { ref } from 'vue';
 import { CheckCircleIcon } from "@heroicons/vue/20/solid";
 import { XCircleIcon } from "@heroicons/vue/20/solid";
 import { ArrowUpRightIcon } from "@heroicons/vue/20/solid";
+import { BicepsFlexed, Bone, Hand} from 'lucide-vue-next';
 
 
 const princingsEntrenamientos = ref([
@@ -259,10 +276,11 @@ const pricingsPresoterapia = ref([
 ])
 
 const datosPrincipales = ref(pricingsFisio.value)
-
+const activeTab = ref('fisioterapia')
 
 // seleccionamos los precios segun
 const princingsInfo = (e) => {
+	activeTab.value = e
 
 	if (e === 'terapiaManual') {
 		datosPrincipales.value = pricingsPresoterapia.value
@@ -276,13 +294,62 @@ const princingsInfo = (e) => {
 		datosPrincipales.value = princingsEntrenamientos.value
 		return;
 	}
-
 }
 
 
 </script>
 
 <style scoped>
+/* ── Tabs ──────────────────────────────── */
+.princings__services {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 2.5rem;
+	margin-bottom: 6rem;
+}
+
+.services__button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 1rem 2.4rem;
+	border-radius: 999px;
+	border: 2px solid var(--color-main-400, #8ecec5);
+	background: transparent;
+	color: var(--color-main-700, #1a5c56);
+	font-size: 1.6rem;
+	font-weight: 600;
+	cursor: pointer;
+	position: relative;
+	transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.services__button:hover {
+	background: var(--color-main-100, #e8f7f5);
+	border-color: var(--color-main-600, #2d8a82);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(46, 138, 130, 0.15);
+}
+
+.services__button.active {
+	background: var(--color-main-600, #2d8a82);
+	border-color: var(--color-main-600, #2d8a82);
+	color: #fff;
+	box-shadow: 0 8px 24px rgba(46, 138, 130, 0.35);
+	transform: translateY(-2px);
+}
+
+.services__button.active:hover {
+	background: var(--color-main-700, #1a5c56);
+	border-color: var(--color-main-700, #1a5c56);
+}
+
+.tab__icon {
+	font-size: 1.8rem;
+	line-height: 1;
+}
 /* poner mas visualmente el precios más utilizado */
 @media (width > 1024px) {
 	.card-pricings:nth-child(2) {

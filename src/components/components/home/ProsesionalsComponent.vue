@@ -7,7 +7,7 @@ import { reactive, markRaw } from 'vue';
 
 const profesionales = markRaw([
 	{
-		name: 'Camila Gaviria',
+		name: 'camila torres',
 		profesion: 'Profesional Fisioterapeuta',
 		picture: '/assets/img/profesionals/Camila.webp',
 		socials: [
@@ -30,7 +30,7 @@ const profesionales = markRaw([
 
 	},
 	{
-		name: 'Samuel Gaviria',
+		name: 'samuel restrepo',
 		profesion: 'Entrenador Profesional ',
 		picture: '/assets/img/profesionals/samuel.webp',
 		socials: [
@@ -72,15 +72,9 @@ const profesionales = markRaw([
 						class="hover:scale-125 transition-all object-cover  hover:rotate-10 h-[40rem] md:h-[78rem] ">
 				</figure>
 				<article class="card__info">
-					<h2 class="card__info__title">{{ profesional.profesion }} </h2>
-					<h3 class="card__info__name">{{ profesional.name }}</h3>
+					<h2 class="card__info__title ">{{ profesional.profesion }} </h2>
+					<h3 class="card__info__name capitalize">{{ profesional.name }}</h3>
 					<ul class="card__info__redes">
-						<li v-for="redes in profesional.socials">
-							<a :href="redes.link" :aria-label="redes.social">
-								<component :is="redes.icon" color="oklch(0.3142 0.0765 188.33)" class="size-15" />
-							</a>
-						</li>
-
 
 					</ul>
 				</article>

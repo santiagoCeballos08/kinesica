@@ -17,34 +17,34 @@
 			class="header__container__items text-center lg:block w-full lg:w-auto overflow-hidden"
 		>
 			<ul class="header__navegation__items lg:flex">
-				<li class="header__itmes text-main-700">
+				<li class="header__itmes capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#inicio' }" @click="closeMenu"
-						>inicio</router-link
+						>Inicio</router-link
 					>
 				</li>
-				<li class="header__itmes text-main-700">
+				<li class="header__itmes capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#quienesSomos' }" @click="closeMenu"
 						>Quienes somos</router-link
 					>
 				</li>
-				<li class="header__itmes text-main-700">
+				<li class="header__itmes capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#services' }" @click="closeMenu"
 						>Nuestros servicios</router-link
 					>
 				</li>
-				<li class="header__itmes text-main-700">
+				<li class="header__itmes capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#profesionales' }" @click="closeMenu"
 						>Profesionales</router-link
 					>
 				</li>
-				<li class="header__itmes text-main-700">
+				<li class="header__itmes capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#precios' }" @click="closeMenu"
 						>Planes</router-link
 					>
 				</li>
-				<li class="header__itmes text-main-700">
+				<li class="header__itmes capitalize text-main-700">
 					<router-link :to="{ path: '/contacto', hash: '' }" @click="closeMenu"
-						>Contactanos</router-link
+						>Contáctanos</router-link
 					>
 				</li>
 			</ul>
@@ -55,17 +55,31 @@
 <script setup>
 import { Bars3CenterLeftIcon } from '@heroicons/vue/20/solid';
 import { RouterLink } from 'vue-router';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import gsap from 'gsap';
+import { useUIStore } from '@/stores/uiStore';
 
 const headerRef = ref(null);
 const navRef = ref(null);
 const active = ref(false);
 
+const uiStore = useUIStore();
+
 onMounted(() => {
 	if (window.innerWidth < 1024) {
 		gsap.set(navRef.value, { height: 0, autoAlpha: 0 });
 	}
+
+	watch(
+		() => uiStore.isServicesScrollActive,
+		(isActive) => {
+			gsap.to(headerRef.value, {
+				autoAlpha: isActive ? 0 : 1,
+				duration: 0.4,
+				ease: 'power2.inOut',
+			});
+		},
+	);
 });
 
 function getNavHeight() {

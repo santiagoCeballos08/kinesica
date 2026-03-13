@@ -19,7 +19,7 @@ export const servicesData = [
 	{
 		id : 1,
 		title : 'Entrnamiento <span class="text-main-400">Funcional</span>',
-		description : `Un espacio donde el ejercicio se adapta a tu condición física y objetivos. Activa todo tu cuerpo con entrenamientos dinámicos que combinan peso corporal, pesas, bandas elásticas y TRX, para que cada sesión sea efectiva, motivadora y transformadora.  <br><br> <strong>cada sesion incluye:</strong>   <br> 15 min de calentamiento aeróbico
+		description : `Activa todo tu cuerpo con entrenamientos dinámicos que combinan peso corporal, pesas, bandas elásticas y TRX, para que cada sesión sea efectiva, motivadora y transformadora.  <br><br> <strong>cada sesion incluye:</strong>   <br> 15 min de calentamiento aeróbico
 						<br> 35 min de entrenamiento mediante diferentes tipos de ejercicios los cuales se realizan por estaciones o bases.
 						<br>
 						10 min de vuelta a la calma y flexibilidad.`,

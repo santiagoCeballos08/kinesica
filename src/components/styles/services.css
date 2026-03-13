@@ -235,8 +235,8 @@
 	transform: translateX(-30px);
 }
 
-/* ── Indicadores móvil ─────────────────── */
-.indicadores {
+/* ── inidicators móvil ─────────────────── */
+.inidicators {
 	display: flex;
 	justify-content: center;
 	gap: 0.5rem;
@@ -260,9 +260,53 @@
 }
 
 /* ── Descripción ────────────────────────── */
+.card__desc-wrapper {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
 .card__desc {
 	font-size: clamp(1.4rem, 1.5vw, 1.8rem);
-	margin-bottom: 1rem;
+	margin-bottom: 0;
+	transition: max-height 0.4s ease;
+}
+
+.card__desc--clamped {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* ── Botón Ver más ────────────────────────────── */
+.btn-ver-mas {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	background: transparent;
+	border: 1px solid rgba(192, 231, 225, 0.3);
+	color: #c0e7e1;
+	font-size: 1.3rem;
+	padding: 0.45rem 1.1rem;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: background 0.25s, border-color 0.25s;
+	margin-top: 0.5rem;
+}
+
+.btn-ver-mas:hover {
+	background: rgba(192, 231, 225, 0.1);
+	border-color: rgba(192, 231, 225, 0.6);
+}
+
+.btn-ver-mas__icon {
+	width: 1.4rem;
+	height: 1.4rem;
+	transition: transform 0.3s ease;
+}
+
+.btn-ver-mas__icon.rotated {
+	transform: rotate(180deg);
 }
 
 /* ── Responsive ────────────────────────── */
@@ -314,6 +358,10 @@
 
 	.card__desc {
 		font-size: clamp(1.6rem, 1.4vw, 2rem);
+	}
+
+	.card__desc--clamped {
+		-webkit-line-clamp: 3;
 	}
 
 	.indicador {
@@ -387,11 +435,16 @@
 
 	.card__desc {
 		font-size: 1.4rem;
-		margin-bottom: 0.6rem;
-		display: -webkit-box;
-		/* -webkit-line-clamp: 5; */
-		-webkit-box-orient: vertical;
-		overflow: hidden;
+		margin-bottom: 0.3rem;
+		transition: none;
+	}
+
+	.card__desc--clamped {
+		-webkit-line-clamp: 3;
+	}
+
+	.card__desc-wrapper {
+		margin-bottom: 0.5rem;
 	}
 
 	.card__info__sensibilitys {
@@ -437,7 +490,8 @@
 		top: 38vh;
 	}
 
-	.indicadores {
+	.inidicators {
 		margin-block: 0.4rem;
+		margin-bottom: 2rem;
 	}
 }

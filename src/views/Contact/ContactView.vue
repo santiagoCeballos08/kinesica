@@ -65,7 +65,7 @@
 					<!-- Stats rápidos -->
 					<div class="grid grid-cols-2 gap-6 max-w-2xl mx-auto animate-fadeInUp delay-400">
 						<div class="text-4xl text-center border-l-2 border-main-500/50">
-							<div class=" text-5xl font-black text-main-400">+5</div>
+							<div class=" text-5xl font-black text-main-400">+7</div>
 							<div class="text-gray-400 uppercase tracking-wider mt-1">Años</div>
 						</div>
 						<div class=" text-4xl text-center border-l-2 border-main-500/50">
@@ -157,7 +157,7 @@
 							</p>
 							<p class="flex items-center justify-center">
 
-								Sáb: 9:00 - 18:00
+								Sáb: 9:00 - 12:00
 							</p>
 						</div>
 					</div>

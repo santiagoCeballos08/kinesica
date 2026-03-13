@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // importamos los datos de los servicios
 import { servicesData } from '@/data/servicesData';
+import { useUIStore } from '@/stores/uiStore';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,12 +15,25 @@ const progressBar = ref(null);
 const isMobile = ref(typeof window !== 'undefined' && window.innerWidth <= 768);
 let ctx = null;
 
+const uiStore = useUIStore();
+
 // ─ Slider reactivo por servicio ─
 // Mapea service.id → índice activo de la característica visible
 const activeSlides = reactive({});
 const sliderIntervals = [];
 
+// ─ Descripción expandida por servicio (móvil) ─
+const expandedDesc = reactive({});
+
+function toggleExpandedDesc(serviceId) {
+	expandedDesc[serviceId] = !expandedDesc[serviceId];
+}
+
 function initSliders() {
+	servicesData.forEach((service) => {
+		expandedDesc[service.id] = false;
+	});
+
 	if (window.innerWidth > 768) return;
 
 	servicesData.forEach((service) => {
@@ -183,6 +197,10 @@ onMounted(async () => {
 				start: 'top top',
 				end: () => `+=${getTotalWidth()}`,
 				invalidateOnRefresh: true,
+				onEnter: () => { uiStore.isServicesScrollActive = true; },
+				onLeave: () => { uiStore.isServicesScrollActive = false; },
+				onEnterBack: () => { uiStore.isServicesScrollActive = true; },
+				onLeaveBack: () => { uiStore.isServicesScrollActive = false; },
 				onUpdate: (self) => {
 					// Barra de progreso
 					if (progressBar.value) {
@@ -201,7 +219,7 @@ onMounted(async () => {
 			const sensibilitys = panel.querySelector('.card__info__sensibilitys');
 			const boton = panel.querySelector('.boton-contacto');
 			const elementos = panel.querySelectorAll('.caracteristica');
-			const indicadores = panel.querySelectorAll('.indicador');
+			const inidicators = panel.querySelectorAll('.indicador');
 			const numBg = panel.querySelector('.panel-number-bg');
 			const divider = panel.querySelector('.title-divider');
 
@@ -389,20 +407,29 @@ onUnmounted(() => {
 					<!-- Contenido -->
 					<div class="card__info flex flex-col">
 
-						<!-- Tag de servicio -->
-						<!-- <span class="service-tag">Servicio {{ String(idx + 1).padStart(2, '0') }}</span> -->
 
 						<!-- Título con wrapper para reveal -->
-						<div class="title-reveal-wrapper overflow-hidden">
+						<div class="title-reveal-wrapper overflow-hidden ">
 							<h2 v-html="service.title" class="card__info__title font-bold leading-tight"></h2>
 						</div>
 
 						<!-- Divisor animado -->
-						<div class="title-divider"></div>
+						<div class="title-divider inline-block mb-10"></div>
 
 						<!-- Descripción -->
-						<p class="card__desc leading-relaxed text-gray-300" v-html="service.description">
-						</p>
+						<div class="card__desc-wrapper">
+							<p class="card__desc leading-relaxed text-gray-300"
+								:class="{ 'card__desc--clamped': !expandedDesc[service.id] }"
+								v-html="service.description">
+							</p>
+							<button class="btn-ver-mas mb-4" @click="toggleExpandedDesc(service.id)">
+								<span>{{ expandedDesc[service.id] ? 'Ver menos' : 'Ver más' }}</span>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+									class="btn-ver-mas__icon" :class="{ rotated: expandedDesc[service.id] }">
+									<path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+								</svg>
+							</button>
+						</div>
 
 						<!-- Características -->
 						<article class="card__info__sensibilitys relative">
@@ -439,8 +466,8 @@ onUnmounted(() => {
 							</template>
 						</article>
 
-						<!-- Indicadores móvil -->
-						<div class="indicadores lg:hidden">
+						<!-- inidicators móvil -->
+						<div class="inidicators lg:hidden ">
 							<div class="indicador" :class="{ activo: (activeSlides[service.id] ?? 0) === i }"
 								v-for="(_, i) in service.characteristics" :key="i" @click="goToSlide(service.id, i)">
 							</div>

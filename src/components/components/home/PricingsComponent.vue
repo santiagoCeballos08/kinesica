@@ -88,7 +88,7 @@ const pricingsEntrenamientos = ref([
 	{
 		namePlan: 'Entrenamiento Light',
 		pricing: '155.000',
-		describePlan: 'Entrena a tu ritmo con 3 sesiones semanales guiadas por profesionales. Ideal para quienes inician su camino fitness o buscan mantenerse activos sin sobreexigirse. Resultados reales con grupos reducidos y atención personalizada.',
+		describePlan: 'Entrena a tu ritmo con 3 sesiones semanales guiadas por profesionales. Ideal para quienes inician su camino fitness o buscan mantenerse activos sin sobreexigirse. Resultados reales con grupos reducidos y atención semiperzonalizadas.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -172,7 +172,7 @@ const pricingsFisio = ref([
 	{
 		namePlan: 'Plan pro',
 		pricing: '750.000',
-		describePlan: 'Transforma tu recuperación con 15 sesiones de fisioterapia especializada. Nuestros expertos combinan técnicas innovadoras para maximizar tu rendimiento y acelerar resultados. El equilibrio perfecto entre intensidad y efectividad para quienes buscan resultados reales sin comprometer su bienestar.',
+		describePlan: 'Transforma tu recuperación con 15 sesiones de fisioterapia semipersonalizada. Nuestros expertos combinan técnicas innovadoras para maximizar tu rendimiento y acelerar resultados. El equilibrio perfecto entre intensidad y efectividad para quienes buscan resultados reales sin comprometer su bienestar.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -216,7 +216,7 @@ const pricingsPresoterapia = ref([
 	{
 		namePlan: 'Terapia Manual',
 		pricing: '90.000',
-		describePlan: 'Potencia tu bienestar con sesiones personalizadas de drenaje linfático y presoterapia. Reduce la retención de líquidos, mejora la circulación y recupera la ligereza en tus piernas. Tratamiento profesional diseñado para tu salud y confort.',
+		describePlan: 'Potencia tu bienestar con sesiones semipersonalizadas de drenaje linfático y presoterapia. Reduce la retención de líquidos, mejora la circulación y recupera la ligereza en tus piernas. Tratamiento profesional diseñado para tu salud y confort.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -240,7 +240,7 @@ const pricingsPresoterapia = ref([
 	{
 		namePlan: 'Terapia Manual Full',
 		pricing: '405.000',
-		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce la retención de líquidos, mejora la circulación y recupera el bienestar integral con sesiones semiprofesionales diseñadas para ti.',
+		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce la retención de líquidos, mejora la circulación y recupera el bienestar integral con sesiones semipersonalizadas diseñadas para ti.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{

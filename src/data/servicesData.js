@@ -13,6 +13,7 @@ import EdemaIcon from "@/assets/icons/EdemaIcon.vue"
 import RelaxIcon from "@/assets/icons/RelaxIcon.vue"
 import SpaIcon from "@/assets/icons/SpaIcon.vue"
 import BodyIcon from "@/assets/icons/BodyIcon.vue"
+import { User } from "lucide-vue-next"
 
 
 export const servicesData = [
@@ -65,12 +66,12 @@ export const servicesData = [
 			{
 				icon : ClipboardPlus,
 				title : 'Tratamiento',
-				description : 'Tratamiento personalizado'
+				description : 'Tratamiento semipersonalizado'
 			},
 			{
-				icon : EdemaIcon,
-				title : 'Disminución de edemas',
-				description : 'Disminución de edema y retención de líquidos'
+				icon : User,
+				title : 'Educación al paciente',
+				description : 'Orientación para el autocuidado y la prevención'
 			},
 			{
 				icon : HeartPulse,

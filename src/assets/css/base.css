@@ -46,7 +46,7 @@
 }
 
 @layer components {
-	.header__itmes {
+	.header__items {
 		@apply px-4 py-8 lg:py-4  hover:bg-main rounded-sm cursor-pointer;
 	}
 

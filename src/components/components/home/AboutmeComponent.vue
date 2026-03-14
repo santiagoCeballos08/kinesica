@@ -29,7 +29,7 @@
 					esqueléticas. Recuperando así la autonomía en actividades de la vida diaria.
 				</p>
 
-				<button class="about__open-btn mt-8 inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white cursor-pointer" @click="showModal = true">
+				<button class="about__open-btn mx-auto mt-8 inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-white cursor-pointer" @click="showModal = true">
 					<span>Ver más sobre nosotros</span>
 					<video-icon />
 				</button>
@@ -58,14 +58,14 @@
 			</h4>
 
 			<!-- Vertical video container (9:16) -->
-			<div class="modal-about__video-wrapper relative w-full max-w-xs mx-auto overflow-hidden rounded-2xl bg-black/30" style="aspect-ratio: 9/16;">
+			<div class="modal-about__video-wrapper relative w-full flex justify-center  mx-auto rounded-2xl bg-black/30">
 				<!-- Replace src with your actual video URL -->
 				<video
-					class="modal-about__video absolute inset-0 min-h-[50vh] object-cover"
+					class="object-cover h-full rounded-xl"
 					controls
 					playsinline
-					poster="/assets/img/quienesSomos.webp">
-					<source src="" type="video/mp4" />
+					poster="">
+					<source src="/public/assets/banner.webm" type="video/webm" />
 				</video>
 			</div>
 		</div>
@@ -152,6 +152,7 @@ const showModal = ref(false);
 .modal-about__video-wrapper {
 	border: 1px solid rgba(192, 231, 225, 0.15);
 	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+	aspect-ratio: 9 / 16;
 }
 </style>
 

@@ -1,15 +1,15 @@
 <template>
-	<section class=" container__princings__hero mt-40 bg-white-app p-4" id="precios">
+	<section class=" container__pricings__hero mt-40 bg-white-app p-4" id="precios">
 		<span class="title-section mb-10">nuestros precios</span>
 		<h2 class="text-title font-bold border-dotted border-main-300 border-b-2 text-center text-main-700">
 			Nuestros increíbles precios
 		</h2>
-		<section class="container__princings__titles ">
-			<section class="princings__services mt-10 mb-40">
+		<section class="container__pricings__titles ">
+			<section class="pricings__services mt-10 mb-40">
 				<button
 					class="services__button"
 					:class="{ active: activeTab === 'terapiaManual' }"
-					@click="princingsInfo('terapiaManual')">
+					@click="pricingsInfo('terapiaManual')">
 					<span class="tab__icon">
 						<Hand />
 					</span>
@@ -18,14 +18,14 @@
 				<button
 					class="services__button"
 					:class="{ active: activeTab === 'fisioterapia' }"
-					@click="princingsInfo('fisioterapia')">
+					@click="pricingsInfo('fisioterapia')">
 					<span class="tab__icon"><Bone/></span>
 					<span>Fisioterapia General</span>
 				</button>
 				<button
 					class="services__button"
 					:class="{ active: activeTab === 'entrenamiento' }"
-					@click="princingsInfo('entrenamiento')">
+					@click="pricingsInfo('entrenamiento')">
 					<span class="tab__icon">
 						<BicepsFlexed />
 					</span>
@@ -35,9 +35,9 @@
 		</section>
 
 		<!-- precios de proyectos -->
-		<section class="container__princins__cards__hero " v-fade-in>
+		<section class="container__pricings__cards__hero " v-fade-in>
 			<section
-				class="container__princins__cards min-h-[70vh] flex flex-col lg:flex-row gap-8 items-center lg:justify-center max-w-app mx-auto">
+				class="container__pricings__cards min-h-[70vh] flex flex-col lg:flex-row gap-8 items-center lg:justify-center max-w-app mx-auto">
 
 				<!-- CARD DE PRECIOS -->
 				<div v-for="value in datosPrincipales" :key="value.namePlan"
@@ -84,11 +84,11 @@ import { ArrowUpRightIcon } from "@heroicons/vue/20/solid";
 import { BicepsFlexed, Bone, Hand} from 'lucide-vue-next';
 
 
-const princingsEntrenamientos = ref([
+const pricingsEntrenamientos = ref([
 	{
 		namePlan: 'Plan Full',
 		pricing: '220.000',
-		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía semiprofesional personalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
+		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía profesional semipersonalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -101,7 +101,7 @@ const princingsEntrenamientos = ref([
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Guia profesional en cada sesion'
+				text: 'Guía profesional en cada sesión'
 			},
 		]
 	},
@@ -121,7 +121,7 @@ const princingsEntrenamientos = ref([
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Guia profesional en cada sesion'
+				text: 'Guía profesional en cada sesión'
 			},
 		]
 	},
@@ -141,7 +141,7 @@ const princingsEntrenamientos = ref([
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Guia profesional en cada sesion'
+				text: 'Guía profesional en cada sesión'
 			},
 		]
 	},
@@ -149,8 +149,8 @@ const princingsEntrenamientos = ref([
 
 const pricingsFisio = ref([
 	{
-		namePlan: 'Plan basico',
-		pricing: '500.000',
+		namePlan: 'Plan básico',
+		pricing: '550.000',
 		describePlan: 'Recupera tu movilidad y bienestar con sesiones de fisioterapia personalizadas. Nuestros profesionales utilizan técnicas avanzadas para aliviar el dolor, mejorar tu flexibilidad y acelerar tu recuperación. Tratamiento integral diseñado para tu salud y desempeño físico óptimo.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
@@ -180,7 +180,7 @@ const pricingsFisio = ref([
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Maximo 3 personas'
+				text: 'Máximo 3 personas'
 			},
 			{
 				icon: CheckCircleIcon,
@@ -262,7 +262,7 @@ const datosPrincipales = ref(pricingsFisio.value)
 const activeTab = ref('fisioterapia')
 
 // seleccionamos los precios segun
-const princingsInfo = (e) => {
+const pricingsInfo = (e) => {
 	activeTab.value = e
 
 	if (e === 'terapiaManual') {
@@ -274,7 +274,7 @@ const princingsInfo = (e) => {
 		return;
 	}
 	if (e === 'entrenamiento') {
-		datosPrincipales.value = princingsEntrenamientos.value
+		datosPrincipales.value = pricingsEntrenamientos.value
 		return;
 	}
 }
@@ -284,7 +284,7 @@ const princingsInfo = (e) => {
 
 <style scoped>
 /* ── Tabs ──────────────────────────────── */
-.princings__services {
+.pricings__services {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;

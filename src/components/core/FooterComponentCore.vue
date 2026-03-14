@@ -52,19 +52,19 @@
 
 
 			<section class="footer__links__contacto">
-				<h3 class="font-semibold mb-4 capitalize">Siguenos en nuestras redes</h3>
+				<h3 class="font-semibold mb-4 capitalize">Síguenos en nuestras redes</h3>
 				<ul class="content flex flex-row justify-center  items-start gap-4">
 					<li><a aria-label="red social de instagram" href="https://www.instagram.com/kinesica.fisioterapia"><instagram-icon class="size-20" color="#fff" /></a></li>
 					<li><a aria-label="red social de facebook"
-						 href="https://www.facebook.com/profile.php?id=61577351925960"><facebook-icon class="size-20" color="#fff" /></a></li>
+							href="https://www.facebook.com/profile.php?id=61577351925960"><facebook-icon class="size-20" color="#fff" /></a></li>
 					<li><a aria-label="red social de tiktok"
-						 href="https://www.tiktok.com/@kinesica5"><tiktok-icon class="size-20" color="#fff" /></a></li>
+							href="https://www.tiktok.com/@kinesica5"><tiktok-icon class="size-20" color="#fff" /></a></li>
 				</ul>
 			</section>
 		</article>
 	</footer>
 	<section class="content__derechos bg-main-100 text-[1.2rem] flex flex-col text-center">
-		<p>Kinsesica© Todos los derechos reservados {{ year }}</p>
+		<p>Kinesica© Todos los derechos reservados {{ year }}</p>
 		<p>
 			Desarrollado por
 			<a href="https://github.com/santiagoCeballos08" name="nombreDesarrollador">Santiago ceballos</a>

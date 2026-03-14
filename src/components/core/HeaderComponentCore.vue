@@ -17,33 +17,33 @@
 			class="header__container__items text-center lg:block w-full lg:w-auto overflow-hidden"
 		>
 			<ul class="header__navegation__items lg:flex">
-				<li class="header__itmes capitalize text-main-700">
+				<li class="header__items capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#inicio' }" @click="closeMenu"
 						>Inicio</router-link
 					>
 				</li>
-				<li class="header__itmes capitalize text-main-700">
+				<li class="header__items capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#quienesSomos' }" @click="closeMenu">
 						Quiénes somos
 					</router-link
 					>
 				</li>
-				<li class="header__itmes capitalize text-main-700">
+				<li class="header__items capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#services' }" @click="closeMenu"
 						>Nuestros servicios</router-link
 					>
 				</li>
-				<li class="header__itmes capitalize text-main-700">
+				<li class="header__items capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#profesionales' }" @click="closeMenu"
 						>Profesionales</router-link
 					>
 				</li>
-				<li class="header__itmes capitalize text-main-700">
+				<li class="header__items capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#precios' }" @click="closeMenu"
 						>Planes</router-link
 					>
 				</li>
-				<li class="header__itmes capitalize text-main-700">
+				<li class="header__items capitalize text-main-700">
 					<router-link :to="{ path: '/contacto', hash: '' }" @click="closeMenu"
 						>Contáctanos</router-link
 					>

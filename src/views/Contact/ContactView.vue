@@ -181,7 +181,7 @@
 							<a href="https://maps.app.goo.gl/p99phJ6acHndsJnf6" target="_blank"
 								rel="noopener noreferrer"
 								class="inline-flex items-center gap-2 absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-5 py-3 bg-main-600 hover:bg-main-500 text-white rounded-full shadow-lg hover:shadow-main-500/50 transition-all duration-300 hover:scale-105 font-semibold  whitespace-nowrap">
-								Ir a ubicación
+								Ir a la ubicación
 								<Send class="w-5 h-5 flex-shrink-0" />
 							</a>
 						</div>

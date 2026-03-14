@@ -512,7 +512,7 @@ onUnmounted(() => {
 						</div>
 
 						<!-- Botón -->
-						<a :href="service.uri" target="_blanck" class="boton-contacto !self-center md:self-start">
+						<a :href="service.uri" target="_blank" class="boton-contacto !self-center md:self-start">
 							<span>Agendar Sesión</span>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
 								class="btn-icon">

@@ -18,8 +18,8 @@ import BodyIcon from "@/assets/icons/BodyIcon.vue"
 export const servicesData = [
 	{
 		id : 1,
-		title : 'Entrnamiento <span class="text-main-400">Funcional</span>',
-		description : `Activa todo tu cuerpo con entrenamientos dinámicos que combinan peso corporal, pesas, bandas elásticas y TRX, para que cada sesión sea efectiva, motivadora y transformadora.  <br><br> <strong>cada sesion incluye:</strong>   <br> 15 min de calentamiento aeróbico
+		title : 'Entrenamiento <span class="text-main-400">Funcional</span>',
+		description : `Activa todo tu cuerpo con entrenamientos dinámicos que combinan peso corporal, pesas, bandas elásticas y TRX, para que cada sesión sea efectiva, motivadora y transformadora.  <br><br> <strong>cada sesión incluye:</strong>   <br> 15 min de calentamiento aeróbico
 						<br> 35 min de entrenamiento mediante diferentes tipos de ejercicios los cuales se realizan por estaciones o bases.
 						<br>
 						10 min de vuelta a la calma y flexibilidad.`,
@@ -34,7 +34,7 @@ export const servicesData = [
 			},
 			{
 				icon : ActivityIcon,
-				title : 'Reduccion de estrés',
+				title : 'Reducción de estrés',
 				description : 'Reducción de estrés y ansiedad'
 			},
 			{
@@ -44,7 +44,7 @@ export const servicesData = [
 			},
 			{
 				icon : Users,
-				title : 'Campañamiento de Sessión',
+				title : 'Acompañamiento de Sesión',
 				description : 'Acompañamiento en todas las sesiones'
 			},
 		]
@@ -59,7 +59,7 @@ export const servicesData = [
 		characteristics : [
 			{
 				icon : ListCheck,
-				title : 'Evalucación',
+				title : 'Evaluación',
 				description : 'Evaluación integral'
 			},
 			{
@@ -90,7 +90,7 @@ export const servicesData = [
 		characteristics : [
 			{
 				icon : zapIcon,
-				title : 'Disminucion de piernas cansadas',
+				title : 'Disminución de piernas cansadas',
 				description : 'Disminución en la sensación de piernas cansadas'
 			},
 			{
@@ -132,7 +132,7 @@ export const servicesData = [
 			{
 				icon : SpaIcon,
 				title : 'Activación Circular',
-				description : 'Activación de la circulacion sanguinea'
+				description : 'Activación de la circulación sanguínea'
 			},
 			{
 				icon : BodyIcon,

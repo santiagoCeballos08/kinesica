@@ -20,8 +20,8 @@
 				</h2>
 				<section
 					class="container__button__banner w-full flex flex-col md:flex-row justify-center gap-8 mb-20 items-center">
-					<a href="https://wa.link/prxrs5" target="_blanck" class="boton-contacto">Agenda con una cita <calendar-days-icon class="size-10" /> </a>
-					<a href="https://wa.link/prxrs5" target="_blanck" class="boton-contacto group hover:scale-100">
+					<a href="https://wa.link/prxrs5" target="_blank" class="boton-contacto">Agenda con una cita <calendar-days-icon class="size-10" /> </a>
+					<a href="https://wa.link/prxrs5" target="_blank" class="boton-contacto group hover:scale-100">
 						Saber Más
 						<ArrowLongRightIcon class="size-10 " />
 					</a>

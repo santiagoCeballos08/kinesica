@@ -22,7 +22,7 @@ const profesionales = markRaw([
 				icon: FacebookIcon
 			},
 			{
-				social: 'linkeding',
+				social: 'linkedin',
 				link: '#',
 				icon: LinkedingIcon
 			}
@@ -45,7 +45,7 @@ const profesionales = markRaw([
 				icon: FacebookIcon
 			},
 			{
-				social: 'linkeding',
+				social: 'linkedin',
 				link: '#',
 				icon: LinkedingIcon
 			}

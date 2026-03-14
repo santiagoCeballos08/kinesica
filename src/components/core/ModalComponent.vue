@@ -65,7 +65,9 @@ function close() {
 .modal__panel {
 	position: relative;
 	width: 100%;
-	max-width: 52rem;
+max-width: 60rem;
+	height: max-content;
+	max-height: 100vh;
 	background: linear-gradient(
 		145deg,
 		var(--color-main-800) 0%,
@@ -76,7 +78,7 @@ function close() {
 	padding: 3.2rem;
 	color: #fff;
 	box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(192, 231, 225, 0.08);
-	overflow: hidden;
+overflow: hidden;
 }
 
 /* ── Orbe decorativo ─────────────────── */

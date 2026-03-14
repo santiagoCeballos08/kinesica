@@ -153,6 +153,7 @@ const showModal = ref(false);
 	border: 1px solid rgba(192, 231, 225, 0.15);
 	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
 	aspect-ratio: 9 / 16;
+	max-height: 75rem;
 }
 </style>
 

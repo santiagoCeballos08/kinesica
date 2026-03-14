@@ -59,7 +59,7 @@
 	}
 
 	.services__button{
-		@apply cursor-pointer underline underline-offset-4 text-3xl
+		@apply cursor-pointer underline-offset-4 text-3xl
 	}
 
 	/* estilos de la card de los profesionales */

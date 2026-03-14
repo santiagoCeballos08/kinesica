@@ -86,14 +86,14 @@ import { BicepsFlexed, Bone, Hand} from 'lucide-vue-next';
 
 const pricingsEntrenamientos = ref([
 	{
-		namePlan: 'Plan Full',
-		pricing: '220.000',
-		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía profesional semipersonalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
+		namePlan: 'Entrenamiento Light',
+		pricing: '155.000',
+		describePlan: 'Entrena a tu ritmo con 3 sesiones semanales guiadas por profesionales. Ideal para quienes inician su camino fitness o buscan mantenerse activos sin sobreexigirse. Resultados reales con grupos reducidos y atención personalizada.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: 'lunes a sábado'
+				text: '3 veces a la semana'
 			},
 			{
 				icon: CheckCircleIcon,
@@ -126,14 +126,14 @@ const pricingsEntrenamientos = ref([
 		]
 	},
 	{
-		namePlan: 'Entrenamiento Light',
-		pricing: '155.000',
-		describePlan: 'Entrena a tu ritmo con 3 sesiones semanales guiadas por profesionales. Ideal para quienes inician su camino fitness o buscan mantenerse activos sin sobreexigirse. Resultados reales con grupos reducidos y atención personalizada.',
+		namePlan: 'Plan Full',
+		pricing: '220.000',
+		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía profesional semipersonalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: '3 veces a la semana'
+				text: 'lunes a sábado'
 			},
 			{
 				icon: CheckCircleIcon,
@@ -145,6 +145,7 @@ const pricingsEntrenamientos = ref([
 			},
 		]
 	},
+
 ]);
 
 const pricingsFisio = ref([
@@ -157,26 +158,6 @@ const pricingsFisio = ref([
 			{
 				icon: CheckCircleIcon,
 				text: '10 sesiones'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Máximo 3 personas'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Guiada por profesional'
-			},
-		]
-	},
-	{
-		namePlan: 'plan plus',
-		pricing: '880.000',
-		describePlan: 'Maximiza tu recuperación con 20 sesiones de fisioterapia intensiva. Nuestros especialistas aplican técnicas avanzadas para resultados visibles. Plan diseñado para quienes buscan transformación completa de su movilidad y bienestar físico.',
-		linkPlan: 'https://wa.link/prxrs5',
-		beneficios: [
-			{
-				icon: CheckCircleIcon,
-				text: '20 sesiones'
 			},
 			{
 				icon: CheckCircleIcon,
@@ -208,6 +189,27 @@ const pricingsFisio = ref([
 			},
 		]
 	},
+	{
+		namePlan: 'plan plus',
+		pricing: '880.000',
+		describePlan: 'Maximiza tu recuperación con 20 sesiones de fisioterapia intensiva. Nuestros especialistas aplican técnicas avanzadas para resultados visibles. Plan diseñado para quienes buscan transformación completa de su movilidad y bienestar físico.',
+		linkPlan: 'https://wa.link/prxrs5',
+		beneficios: [
+			{
+				icon: CheckCircleIcon,
+				text: '20 sesiones'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Máximo 3 personas'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Guiada por profesional'
+			},
+		]
+	},
+
 ])
 
 const pricingsPresoterapia = ref([

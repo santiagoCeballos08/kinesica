@@ -152,7 +152,7 @@ const pricingsFisio = ref([
 	{
 		namePlan: 'Plan básico',
 		pricing: '550.000',
-		describePlan: 'Recupera tu movilidad y bienestar con sesiones de fisioterapia personalizadas. Nuestros profesionales utilizan técnicas avanzadas para aliviar el dolor, mejorar tu flexibilidad y acelerar tu recuperación. Tratamiento integral diseñado para tu salud y desempeño físico óptimo.',
+		describePlan: 'Recupera tu movilidad y bienestar con sesiones de fisioterapia semipersonalizadas. Nuestros profesionales utilizan técnicas avanzadas para aliviar el dolor, mejorar tu flexibilidad y acelerar tu recuperación. Tratamiento integral diseñado para tu salud y desempeño físico óptimo.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -216,7 +216,7 @@ const pricingsPresoterapia = ref([
 	{
 		namePlan: 'Terapia Manual',
 		pricing: '90.000',
-		describePlan: 'Potencia tu bienestar con sesiones semipersonalizadas de drenaje linfático y presoterapia. Reduce la retención de líquidos, mejora la circulación y recupera la ligereza en tus piernas. Tratamiento profesional diseñado para tu salud y confort.',
+		describePlan: 'Potencia tu bienestar con sesiones personalizadas de drenaje linfático y presoterapia. Reduce la retención de líquidos, mejora la circulación y recupera la ligereza en tus piernas. Tratamiento profesional diseñado para tu salud y confort.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
@@ -240,7 +240,7 @@ const pricingsPresoterapia = ref([
 	{
 		namePlan: 'Terapia Manual Full',
 		pricing: '405.000',
-		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce la retención de líquidos, mejora la circulación y recupera el bienestar integral con sesiones semipersonalizadas diseñadas para ti.',
+		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce la retención de líquidos, mejora la circulación y recupera el bienestar integral con sesiones personalizadas diseñadas para ti.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{

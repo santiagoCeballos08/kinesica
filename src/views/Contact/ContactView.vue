@@ -118,8 +118,8 @@
 						</div>
 						<h3 class=" font-semibold mb-2 text-center">Email</h3>
 						<p class="text-gray-600 mb-3 text-center ">Escríbenos</p>
-						<a href="mailto:fisotrainingym@gmail.com"
-							class="text-main-700 font-semibold hover:text-main-900 break-all  block text-center">fisotrainingym@gmail.com</a>
+						<a href="mailto:fisiotrainingym@gmail.com"
+							class="text-main-700 font-semibold hover:text-main-900 break-all  block text-center">fisiotrainingym@gmail.com</a>
 					</div>
 
 					<!-- WhatsApp -->

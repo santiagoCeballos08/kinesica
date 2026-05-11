@@ -20,7 +20,18 @@
 				</h2>
 				<section
 					class="container__button__banner w-full flex flex-col md:flex-row justify-center gap-8 mb-20 items-center">
-					<a href="https://wa.link/prxrs5" target="_blank" class="boton-contacto">Agenda con una cita <calendar-days-icon class="size-10" /> </a>
+					<a href="https://wa.link/j25p5d" target="_blank"
+						class="group boton-contacto flex items-center gap-3 transition-all duration-300 hover:bg-green-500 hover:text-white">
+
+						<span class="transition-colors duration-300 group-hover:text-white">
+							Agenda con una cita
+						</span>
+
+						<whatsapp-icon
+							class="w-[40px] transition-all duration-300 group-hover:scale-110 group-hover:fill-white">
+						</whatsapp-icon>
+
+					</a>
 					<a href="https://wa.link/prxrs5" target="_blank" class="boton-contacto group hover:scale-100">
 						Saber Más
 						<ArrowLongRightIcon class="size-10 " />
@@ -41,7 +52,7 @@
 import { CalendarDaysIcon } from '@heroicons/vue/24/outline';
 import { ArrowLongRightIcon } from '@heroicons/vue/24/outline';
 import ArrowDownIcon from '@/assets/icons/ArrowDownIcon.vue';
-
+import WhatsappIcon from '@/assets/icons/WhatsappIcon.vue';
 
 </script>
 

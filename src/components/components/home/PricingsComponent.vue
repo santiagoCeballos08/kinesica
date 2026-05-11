@@ -2,38 +2,42 @@
 	<section class=" container__pricings__hero mt-40 bg-white-app p-4" id="precios">
 		<span class="title-section mb-10">nuestros precios</span>
 		<h2 class="text-title font-bold border-dotted border-main-300 border-b-2 text-center text-main-700">
-			Nuestros increíbles precios
+			Nuestros increíbles programas
 		</h2>
+
+
 		<section class="container__pricings__titles ">
 			<section class="pricings__services mt-10 mb-40">
-				<button
-					class="services__button"
-					:class="{ active: activeTab === 'terapiaManual' }"
-					@click="pricingsInfo('terapiaManual')">
+				<button class="services__button" :class="{ active: activeTab === 'Plancortisolout' }"
+					@click="pricingsInfo('Plancortisolout')">
 					<span class="tab__icon">
 						<Hand />
 					</span>
-					<span>Terapia manual</span>
+					<span>Plan cortisol out</span>
 				</button>
-				<button
-					class="services__button"
-					:class="{ active: activeTab === 'fisioterapia' }"
-					@click="pricingsInfo('fisioterapia')">
-					<span class="tab__icon"><Bone/></span>
-					<span>Fisioterapia General</span>
+				<button class="services__button" :class="{ active: activeTab === 'Planseniorfit' }"
+					@click="pricingsInfo('Planseniorfit')">
+					<span class="tab__icon">
+						<Bone />
+					</span>
+					<span>Plan senior fit</span>
 				</button>
-				<button
-					class="services__button"
-					:class="{ active: activeTab === 'entrenamiento' }"
-					@click="pricingsInfo('entrenamiento')">
+				<button class="services__button" :class="{ active: activeTab === 'Planfisioplus' }"
+					@click="pricingsInfo('Planfisioplus')">
 					<span class="tab__icon">
 						<BicepsFlexed />
 					</span>
-					<span>Entrenamiento</span>
+					<span>Plan fisioplus</span>
+				</button>
+				<button class="services__button" :class="{ active: activeTab === 'PlanMenosPesoPro' }"
+					@click="pricingsInfo('PlanMenosPesoPro')">
+					<span class="tab__icon">
+						<BicepsFlexed />
+					</span>
+					<span>Plan Menos Peso Pro</span>
 				</button>
 			</section>
 		</section>
-
 		<!-- precios de proyectos -->
 		<section class="container__pricings__cards__hero " v-fade-in>
 			<section
@@ -81,202 +85,215 @@ import { ref } from 'vue';
 import { CheckCircleIcon } from "@heroicons/vue/20/solid";
 import { XCircleIcon } from "@heroicons/vue/20/solid";
 import { ArrowUpRightIcon } from "@heroicons/vue/20/solid";
-import { BicepsFlexed, Bone, Hand} from 'lucide-vue-next';
+import { BicepsFlexed, Bone, Hand } from 'lucide-vue-next';
 
 
-const pricingsEntrenamientos = ref([
+const PlanCortisolOut = ref([
 	{
-		namePlan: 'Entrenamiento Light',
-		pricing: '155.000',
-		describePlan: 'Entrena a tu ritmo con 3 sesiones semanales guiadas por profesionales. Ideal para quienes inician su camino fitness o buscan mantenerse activos sin sobreexigirse. Resultados reales con grupos reducidos y atención semiperzonalizadas.',
+		namePlan: 'Plan Cortisol Out',
+		pricing: '240.000',
+		describePlan: 'Membresía mensual con acceso abierto a sesiones diarias de entrenamiento funcional en grupo. Diseñado para mejorar tu bienestar físico y mental mientras reduces el estrés y fortaleces tu cuerpo.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: '3 veces a la semana'
+				text: 'Sesiones diarias de entrenamiento funcional'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Máximo 10 personas'
+				text: '2 ebook de autocuidado y prevención'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Guía profesional en cada sesión'
+				text: '4 videos personalizados para entrenar en casa'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Masaje descontracturante de espalda (30 min)'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Sesión de reflexología (15 min)'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Incluye valoración inicial'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Contrato de continuidad a 6 meses'
 			},
 		]
 	},
-	{
-		namePlan: 'Entrenamiento Pro',
-		pricing: '200.000',
-		describePlan: 'Entrena de lunes a viernes con la guía de nuestros profesionales. Un plan diseñado para quienes buscan resultados reales con constancia y dedicación. Grupos reducidos para garantizar atención semipersonalizada y maximizar tu rendimiento.',
-		linkPlan: 'https://wa.link/prxrs5',
-		beneficios: [
-			{
-				icon: CheckCircleIcon,
-				text: 'lunes a viernes'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Máximo 10 personas'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Guía profesional en cada sesión'
-			},
-		]
-	},
-	{
-		namePlan: 'Plan Full',
-		pricing: '220.000',
-		describePlan: 'Alcanza tu máximo rendimiento con nuestro plan de entrenamiento más completo. Sesiones diarias de lunes a sábado con guía profesional semipersonalizada. Grupos reducidos para garantizar atención de calidad y resultados óptimos.',
-		linkPlan: 'https://wa.link/prxrs5',
-		beneficios: [
-			{
-				icon: CheckCircleIcon,
-				text: 'lunes a sábado'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Máximo 10 personas'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Guía profesional en cada sesión'
-			},
-		]
-	},
-
 ]);
 
-const pricingsFisio = ref([
+const PlanSeniorFit = ref([
 	{
-		namePlan: 'Plan básico',
-		pricing: '550.000',
-		describePlan: 'Recupera tu movilidad y bienestar con sesiones de fisioterapia semipersonalizadas. Nuestros profesionales utilizan técnicas avanzadas para aliviar el dolor, mejorar tu flexibilidad y acelerar tu recuperación. Tratamiento integral diseñado para tu salud y desempeño físico óptimo.',
+		namePlan: 'Plan Senior Fit',
+		pricing: '300.000',
+		describePlan: 'Membresía integral enfocada en el bienestar, movilidad y prevención física mediante entrenamiento funcional y fisioterapia preventiva.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: '10 sesiones'
+				text: 'Sesiones diarias de entrenamiento funcional'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Máximo 3 personas'
+				text: '4 sesiones de fisioterapia preventiva'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Guiada por profesional'
+				text: '2 ebook de autocuidado y prevención'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: '4 videos personalizados para entrenar en casa'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Masaje descontracturante de espalda (30 min)'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Sesión de reflexología (15 min)'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Incluye valoración inicial'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Contrato de continuidad a 6 meses'
 			},
 		]
 	},
-	{
-		namePlan: 'Plan pro',
-		pricing: '750.000',
-		describePlan: 'Transforma tu recuperación con 15 sesiones de fisioterapia semipersonalizada. Nuestros expertos combinan técnicas innovadoras para maximizar tu rendimiento y acelerar resultados. El equilibrio perfecto entre intensidad y efectividad para quienes buscan resultados reales sin comprometer su bienestar.',
-		linkPlan: 'https://wa.link/prxrs5',
-		beneficios: [
-			{
-				icon: CheckCircleIcon,
-				text: '15 Sesiones'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Máximo 3 personas'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Guiada por profesional'
-			},
-		]
-	},
-	{
-		namePlan: 'plan plus',
-		pricing: '880.000',
-		describePlan: 'Maximiza tu recuperación con 20 sesiones de fisioterapia intensiva. Nuestros especialistas aplican técnicas avanzadas para resultados visibles. Plan diseñado para quienes buscan transformación completa de su movilidad y bienestar físico.',
-		linkPlan: 'https://wa.link/prxrs5',
-		beneficios: [
-			{
-				icon: CheckCircleIcon,
-				text: '20 sesiones'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Máximo 3 personas'
-			},
-			{
-				icon: CheckCircleIcon,
-				text: 'Guiada por profesional'
-			},
-		]
-	},
+]);
 
-])
-
-const pricingsPresoterapia = ref([
+const PlanFisioplus = ref([
 	{
-		namePlan: 'Terapia Manual',
-		pricing: '90.000',
-		describePlan: 'Potencia tu bienestar con sesiones personalizadas de drenaje linfático y presoterapia. Reduce la retención de líquidos, mejora la circulación y recupera la ligereza en tus piernas. Tratamiento profesional diseñado para tu salud y confort.',
+		namePlan: 'Plan Fisioplus',
+		pricing: '900.000',
+		describePlan: 'Programa intensivo enfocado en recuperación física, fortalecimiento y bienestar integral mediante fisioterapia personalizada y entrenamiento funcional.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: '1 Sesión'
+				text: '15 sesiones de fisioterapia 1 a 1'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Drenaje Linfático Manual'
+				text: '5 sesiones de entrenamiento funcional en grupo'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Mensaje descontracturante'
+				text: '2 ebook de autocuidado y prevención'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Presoterapia'
+				text: '4 videos personalizados para entrenar en casa'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Masaje descontracturante de espalda (30 min)'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Sesión de reflexología (15 min)'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Kit de bienestar incluido'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Incluye valoración inicial'
 			},
 		]
 	},
+]);
+
+const PlanMenosPesoPro = ref([
 	{
-		namePlan: 'Terapia Manual Full',
-		pricing: '405.000',
-		describePlan: 'Disfruta de 5 sesiones completas de terapia manual con drenaje linfático y presoterapia. Ideal para tratamientos continuos que potencian resultados. Reduce la retención de líquidos, mejora la circulación y recupera el bienestar integral con sesiones personalizadas diseñadas para ti.',
+		namePlan: 'Plan Menos Peso Pro',
+		pricing: '1.400.000',
+		describePlan: 'Programa especializado para pérdida de peso, combinando fisioterapia, entrenamiento funcional, nutrición y herramientas de bienestar emocional.',
 		linkPlan: 'https://wa.link/prxrs5',
 		beneficios: [
 			{
 				icon: CheckCircleIcon,
-				text: '5 sesiones'
+				text: '12 sesiones de fisioterapia 1 a 1'
 			},
 			{
 				icon: CheckCircleIcon,
-				text: 'Drenaje linfático manual'
+				text: '2 meses de entrenamiento funcional en grupo'
 			},
-
 			{
 				icon: CheckCircleIcon,
-				text: 'Presoterapia'
+				text: 'Valoración por nutricionista'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: '2 ebook de autocuidado y prevención'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: '4 videos personalizados para entrenar en casa'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: '2 sesiones de drenaje linfático'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: '3 sesiones de hipnosis en video'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Autoestima, motivación y control de ansiedad'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: '2 masajes descontracturantes de espalda'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: '2 sesiones de reflexología (15 min)'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Incluye valoración inicial'
+			},
+			{
+				icon: CheckCircleIcon,
+				text: 'Kit de bienestar gratis'
 			},
 		]
 	},
-])
+]);
 
-const datosPrincipales = ref(pricingsFisio.value)
-const activeTab = ref('fisioterapia')
+const datosPrincipales = ref(PlanCortisolOut.value)
+const activeTab = ref('Plancortisolout')
 
 // seleccionamos los precios segun
 const pricingsInfo = (e) => {
 	activeTab.value = e
 
-	if (e === 'terapiaManual') {
-		datosPrincipales.value = pricingsPresoterapia.value
+	if (e === 'Plancortisolout') {
+		datosPrincipales.value = PlanCortisolOut.value
 		return;
 	}
-	if (e === 'fisioterapia') {
-		datosPrincipales.value = pricingsFisio.value
+	if (e === 'Planseniorfit') {
+		datosPrincipales.value = PlanSeniorFit.value
 		return;
 	}
-	if (e === 'entrenamiento') {
-		datosPrincipales.value = pricingsEntrenamientos.value
+	if (e === 'Planfisioplus') {
+		datosPrincipales.value = PlanFisioplus.value
+		return;
+	}
+
+	if (e === 'PlanMenosPesoPro') {
+		datosPrincipales.value = PlanMenosPesoPro.value
 		return;
 	}
 }
@@ -335,6 +352,7 @@ const pricingsInfo = (e) => {
 	font-size: 1.8rem;
 	line-height: 1;
 }
+
 /* poner mas visualmente el precios más utilizado */
 @media (width > 1024px) {
 	.card-pricings:nth-child(2) {

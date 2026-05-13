@@ -42,6 +42,10 @@
 								:to="{ path: '/', hash: '#precios' }">Planes</router-link>
 						</li>
 						<li>
+							<a href="https://www.blogger.com/u/1/blog/posts/893114770250233007"
+								class="hover:underline underline-offset-4">blog</a>
+						</li>
+						<li>
 							<router-link class="hover:underline underline-offset-4"
 								:to="{ path: '/contacto', hash: '' }">Contacto</router-link>
 						</li>
@@ -54,11 +58,14 @@
 			<section class="footer__links__contacto">
 				<h3 class="font-semibold mb-4 capitalize">Síguenos en nuestras redes</h3>
 				<ul class="content flex flex-row justify-center  items-start gap-4">
-					<li><a aria-label="red social de instagram" href="https://www.instagram.com/kinesica.fisioterapia"><instagram-icon class="size-20" color="#fff" /></a></li>
+					<li><a aria-label="red social de instagram"
+							href="https://www.instagram.com/kinesica.fisioterapia"><instagram-icon class="size-20"
+								color="#fff" /></a></li>
 					<li><a aria-label="red social de facebook"
-							href="https://www.facebook.com/profile.php?id=61577351925960"><facebook-icon class="size-20" color="#fff" /></a></li>
-					<li><a aria-label="red social de tiktok"
-							href="https://www.tiktok.com/@kinesica5"><tiktok-icon class="size-20" color="#fff" /></a></li>
+							href="https://www.facebook.com/profile.php?id=61577351925960"><facebook-icon class="size-20"
+								color="#fff" /></a></li>
+					<li><a aria-label="red social de tiktok" href="https://www.tiktok.com/@kinesica5"><tiktok-icon
+								class="size-20" color="#fff" /></a></li>
 				</ul>
 			</section>
 		</article>

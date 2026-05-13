@@ -25,6 +25,9 @@
 						servicios</router-link>
 				</li>
 				<li class="header__items capitalize text-main-700">
+					<a href="https://www.blogger.com/u/1/blog/posts/893114770250233007" @click="closeMenu">blog</a>
+				</li>
+				<li class="header__items capitalize text-main-700">
 					<router-link :to="{ path: '/', hash: '#profesionales' }"
 						@click="closeMenu">Profesionales</router-link>
 				</li>

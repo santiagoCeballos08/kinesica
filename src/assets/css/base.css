@@ -77,7 +77,7 @@
 		@apply flex gap-4
 	}
 	.card__profesional {
-		@apply mx-auto bg-white-app
+		@apply mx-auto bg-white-app rounded-[1.6rem] overflow-hidden;
 	}
 
 

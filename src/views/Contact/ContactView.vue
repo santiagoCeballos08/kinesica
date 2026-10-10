@@ -53,7 +53,7 @@
 
 					<!-- CTA Button -->
 					<div class="flex justify-center gap-4 animate-fadeInUp delay-300 mb-8">
-						<a href="#contacto"
+						<a href="https://wa.link/prxrs5"
 							class="group relative px-8 py-4 bg-main-600 hover:bg-main-500 rounded-lg font-bold text-3xl uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-main-500/50">
 							<span class="relative z-10">Contáctanos</span>
 							<div

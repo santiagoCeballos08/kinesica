@@ -60,13 +60,13 @@ const profesionales = markRaw([
 <template>
 	<section class="content__profesionals__hero bg-main-50 p-10" id="profesionales">
 		<section class="content_title max-w-app mx-auto p-10">
-			<h2 class="text-4xl font-semibold bg-main-600 text-white-app w-fit p-4">Equipo de trabajo</h2>
+			<h2 class="text-4xl font-semibold bg-main-600 text-white-app w-fit p-4 rounded-[1.6rem]">Equipo de trabajo</h2>
 			<h2 class="text-title font-bold">Profesionales</h2>
 
 		</section>
 		<section class="content__prosionals max-w-app grid grid-cols-1 lg:grid-cols-2 mx-auto  gap-10 ">
-			<article class="card__profesional shadow-xl " v-for="profesional in profesionales">
-				<figure class="overflow-hidden ">
+			<article class="card__profesional shadow-xl rounded-[1.6rem] overflow-hidden" v-for="profesional in profesionales">
+				<figure class="overflow-hidden rounded-t-[1.6rem]">
 					<img :src="profesional.picture == '' ? 'https://placehold.co/600x600' : profesional.picture"
 						alt="imagen de profesional de kinesica"
 						class="hover:scale-125 transition-all object-cover  hover:rotate-10 h-[40rem] md:h-[78rem] ">

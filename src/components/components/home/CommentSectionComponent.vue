@@ -26,6 +26,9 @@
 						:key="`row1-${index}`" :testimonial="testimonial" />
 				</div>
 
+
+
+
 				<!-- Marquee Content - Second Row (Right to Left) -->
 				<div class="flex animate-scroll-reverse">
 					<testimonial-card-component
